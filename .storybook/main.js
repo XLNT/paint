@@ -6,20 +6,19 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-a11y/register',
-    '@storybook/addon-storysource',
-    '@storybook/addon-viewport/register'
+    '@storybook/addon-viewport/register',
   ],
   webpackFinal: (config) => {
     config.module.rules.push({
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'postcss-loader',
-            options: { sourceMap: true }
-          }
-        ]
-      })
+      test: /\.css$/,
+      use: [
+        {
+          loader: 'postcss-loader',
+          options: { sourceMap: true },
+        },
+      ],
+    });
 
     return config;
-  }
+  },
 };
