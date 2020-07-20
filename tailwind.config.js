@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
-      serif: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
+      serif: ['turnip', ...defaultTheme.fontFamily.sans],
       mono: defaultTheme.fontFamily.mono,
     },
     gradients: (theme) => ({
