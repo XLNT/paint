@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 import { withInfo } from '@storybook/addon-info';
 
-import Layout from './Layout';
+import Layout from '../src/utils/Layout';
 
 addDecorator((story) => <Layout>{story()}</Layout>);
 addDecorator(withKnobs);
