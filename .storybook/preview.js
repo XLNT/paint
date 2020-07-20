@@ -8,7 +8,7 @@ import { withDesign } from 'storybook-addon-designs'
 import Layout from '../src/utils/Layout';
 
 addDecorator((story) => <Layout>{story()}</Layout>);
-addDecorator(withKnobs);
+addDecorator(withKnobs({ escapeHTML: false }));
 addDecorator(withA11y);
 addDecorator(withInfo);
 addDecorator(withDesign);
