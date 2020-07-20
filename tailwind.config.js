@@ -59,5 +59,5 @@ module.exports = {
     cursor: ['disabled'],
   },
   plugins: [require('tailwindcss-plugins/gradients')],
-  purge: ['./pages/**/*.tsx', './client/components/**/*.tsx'],
+  purge: ['./src/**/*.tsx'],
 };
