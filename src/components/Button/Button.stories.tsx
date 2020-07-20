@@ -9,42 +9,48 @@ import { ReactComponent as AnyIcon } from '../../icons/expand.svg';
 
 export default {
   title: 'Button',
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/oSYDK9EcHtXRJ4cTUK14nU/interface?node-id=1022%3A93277',
+    },
+  },
 };
 
 export const Primary = () => (
   <div className={cn('space-y-4')}>
     <H3>Default / Idle</H3>
     <div className={cn('space-x-4', 'flex flex-row')}>
-      <Button onPress={action('clicked')}>{text('Text', 'Hello World')}</Button>
-      <Button onPress={action('clicked')}>
+      <Button onPress={action('onPress')}>{text('Text', 'Hello World')}</Button>
+      <Button onPress={action('onPress')}>
         <AnyIcon />
         <span>{text('Text', 'Hello World')}</span>
       </Button>
-      <Button onPress={action('clicked')}>
+      <Button onPress={action('onPress')}>
         <span>{text('Text', 'Hello World')}</span>
         <AnyIcon />
       </Button>
     </div>
     <H3>Disabled</H3>
     <div className={cn('space-x-4', 'flex flex-row')}>
-      <Button onPress={action('clicked')} isDisabled>
+      <Button onPress={action('onPress')} isDisabled>
         {text('Text', 'Hello World')}
       </Button>
-      <Button onPress={action('clicked')} isDisabled>
+      <Button onPress={action('onPress')} isDisabled>
         <AnyIcon />
         <span>{text('Text', 'Hello World')}</span>
       </Button>
-      <Button onPress={action('clicked')} isDisabled>
+      <Button onPress={action('onPress')} isDisabled>
         <span>{text('Text', 'Hello World')}</span>
         <AnyIcon />
       </Button>
     </div>
     <H3>Icon</H3>
     <div className={cn('space-x-4', 'flex flex-row')}>
-      <Button onPress={action('clicked')} icon>
+      <Button onPress={action('onPress')} icon>
         <AnyIcon />
       </Button>
-      <Button onPress={action('clicked')} icon isDisabled>
+      <Button onPress={action('onPress')} icon isDisabled>
         <AnyIcon />
       </Button>
     </div>
@@ -55,28 +61,28 @@ export const Secondary = () => (
   <div className={cn('space-y-4')}>
     <H3>Default / Idle</H3>
     <div className={cn('space-x-4', 'flex flex-row')}>
-      <Button onPress={action('clicked')} secondary>
+      <Button onPress={action('onPress')} secondary>
         {text('Text', 'Hello World')}
       </Button>
-      <Button onPress={action('clicked')} secondary icon>
+      <Button onPress={action('onPress')} secondary icon>
         <AnyIcon />
       </Button>
     </div>
     <H3>Disabled</H3>
     <div className={cn('space-x-4', 'flex flex-row')}>
-      <Button onPress={action('clicked')} secondary isDisabled>
+      <Button onPress={action('onPress')} secondary isDisabled>
         {text('Text', 'Hello World')}
       </Button>
-      <Button onPress={action('clicked')} secondary icon isDisabled>
+      <Button onPress={action('onPress')} secondary icon isDisabled>
         <AnyIcon />
       </Button>
     </div>
     <H3>Active</H3>
     <div className={cn('space-x-4', 'flex flex-row')}>
-      <Button onPress={action('clicked')} secondary active>
+      <Button onPress={action('onPress')} secondary active>
         {text('Text', 'Hello World')}
       </Button>
-      <Button onPress={action('clicked')} secondary icon active>
+      <Button onPress={action('onPress')} secondary icon active>
         <AnyIcon />
       </Button>
     </div>
@@ -85,11 +91,11 @@ export const Secondary = () => (
 export const Tertiary = () => (
   <div className={cn('space-y-4')}>
     <H3>Default / Idle</H3>
-    <Button onPress={action('clicked')} tertiary>
+    <Button onPress={action('onPress')} tertiary>
       {text('Text', 'Hello World')}
     </Button>
     <H3>Disabled</H3>
-    <Button onPress={action('clicked')} tertiary isDisabled>
+    <Button onPress={action('onPress')} tertiary isDisabled>
       {text('Text', 'Hello World')}
     </Button>
   </div>
