@@ -1,4 +1,3 @@
-import React from 'react';
 import makeBasicElement from '../util/makeBasicElement';
 import { cn } from '../../utils/cn';
 
@@ -13,5 +12,4 @@ export const LinkText = makeBasicElement<HTMLAnchorElement>(
 );
 export const BoldText = makeBasicElement(Text, cn('font-bold'));
 export const SubText = makeBasicElement(Text, cn('text-subtext'));
-
 export const SlugText = makeBasicElement('code', cn('font-mono'));

@@ -49,6 +49,9 @@ module.exports = {
         '48': '12rem',
         '10xl': '120rem',
       },
+      letterSpacing: {
+        button: '0.02em',
+      },
     },
   },
   variants: {
