@@ -1,3 +1,24 @@
+# v0.5.0 (Tue Jul 21 2020)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Matt Condon ([@shrugs](https://github.com/shrugs)), for all your work!
+
+#### 🚀 Enhancement
+
+- feat: add github action ([@shrugs](https://github.com/shrugs))
+
+#### 🐛 Bug Fix
+
+- testing release workflow [#1](https://github.com/XLNT/paint/pull/1) ([@shrugs](https://github.com/shrugs))
+- fix: move env.local back to .env ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.4.1 (Tue Jul 21 2020)
 
 #### 🐛 Bug Fix
