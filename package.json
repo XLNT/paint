@@ -10,7 +10,8 @@
     "build:storybook": "build-storybook -s public -o build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "yarn eslint 'src/**/*.{js,jsx,ts,tsx,json,mdx}'"
+    "lint": "yarn eslint 'src/**/*.{js,jsx,ts,tsx,json,mdx}'",
+    "release": "auto shipit"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,mdx}": [
@@ -49,7 +50,6 @@
     ]
   },
   "devDependencies": {
-    "@auto-it/all-contributors": "^9.47.1",
     "@auto-it/conventional-commits": "^9.47.1",
     "@auto-it/first-time-contributor": "^9.47.1",
     "@auto-it/released": "^9.47.1",
@@ -91,7 +91,6 @@
   "auto": {
     "plugins": [
       "npm",
-      "all-contributors",
       "conventional-commits",
       "first-time-contributor",
       "released"
