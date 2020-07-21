@@ -1,5 +1,21 @@
 # v0.4.1 (Tue Jul 21 2020)
 
+#### 🐛 Bug Fix
+
+- fix: use correct publishconfig key (mattgcondon@gmail.com)
+
+#### ⚠️ Pushed to `master`
+
+- enforce public access in packagejson (mattgcondon@gmail.com)
+
+#### Authors: 1
+
+- Matt Condon (shrugs) (mattgcondon@gmail.com)
+
+---
+
+# v0.4.1 (Tue Jul 21 2020)
+
 #### ⚠️ Pushed to `master`
 
 - enforce public access in packagejson (mattgcondon@gmail.com)
