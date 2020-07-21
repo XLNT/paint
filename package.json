@@ -1,6 +1,6 @@
 {
   "name": "paint",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "start": "start-storybook -p 9009 -s public --ci",
