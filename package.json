@@ -1,7 +1,10 @@
 {
   "name": "@xlnt/paint",
   "version": "0.4.2",
-  "access": "public",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "start": "start-storybook -p 9009 -s public --ci",
     "build": "yarn build:types && yarn build:ts",
