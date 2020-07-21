@@ -1,20 +1,25 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, ReactNode } from 'react';
 import { cn } from '../../utils/cn';
 
 export function Notification({
   className,
   children,
-  sub = false,
+  accessory,
   ...rest
-}: HTMLAttributes<HTMLDivElement> & { sub?: boolean }) {
+}: HTMLAttributes<HTMLDivElement> & { accessory?: ReactNode }) {
   return (
     <div
-      className={cn(className, 'bg-smudge', 'flex flex-row items-center min-h-0', 'p-2')}
+      className={cn(
+        className,
+        'bg-smudge',
+        'flex flex-row items-center justify-between',
+        'min-w-0 min-h-0',
+        'p-2 space-x-2',
+      )}
       {...rest}
     >
-      <div className={cn('flex-1 flex flex-row text-center', sub ? 'text-subtext' : 'text-base')}>
-        {children}
-      </div>
+      {children}
+      {accessory}
     </div>
   );
 }
