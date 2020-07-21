@@ -49,6 +49,10 @@
     ]
   },
   "devDependencies": {
+    "@auto-it/all-contributors": "^9.47.1",
+    "@auto-it/conventional-commits": "^9.47.1",
+    "@auto-it/first-time-contributor": "^9.47.1",
+    "@auto-it/released": "^9.47.1",
     "@babel/cli": "^7.10.5",
     "@react-types/button": "^3.0.2",
     "@storybook/addon-a11y": "^5.3.19",
@@ -66,6 +70,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/webfontloader": "^1.6.32",
+    "auto": "^9.47.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "postcss-import": "^12.0.1",
@@ -80,5 +85,16 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "repository": "xlnt/paint",
+  "author": "xlnt-matt <matt@xlnt.co>",
+  "auto": {
+    "plugins": [
+      "npm",
+      "all-contributors",
+      "conventional-commits",
+      "first-time-contributor",
+      "released"
+    ]
   }
 }
