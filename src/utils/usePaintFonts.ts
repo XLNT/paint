@@ -1,7 +1,7 @@
 import WebFont from 'webfontloader';
 import { useEffect } from 'react';
 
-export default function usePaintFonts() {
+export function usePaintFonts() {
   useEffect(() => {
     WebFont.load({
       classes: false,

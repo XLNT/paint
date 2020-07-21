@@ -1,7 +1,8 @@
 import React, { PropsWithChildren } from 'react';
 
 import '../styles/index.css';
-import usePaintFonts from './usePaintFonts';
+
+import { usePaintFonts } from './usePaintFonts';
 import { cn } from './cn';
 
 function Layout({ children }: PropsWithChildren<{}>) {

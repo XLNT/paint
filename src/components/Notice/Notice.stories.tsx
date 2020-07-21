@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { H3 } from '../Text/Text';
 import { cn } from '../../utils/cn';
 import { Notice } from './Notice';

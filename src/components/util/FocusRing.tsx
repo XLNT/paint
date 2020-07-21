@@ -4,7 +4,7 @@ import { mergeProps } from '@react-aria/utils';
 import { cn } from '../../utils/cn';
 
 function FocusRing({ children, ...props }: PropsWithChildren<FocusRingProps>) {
-  const { isFocused, isFocusVisible, focusProps } = useFocusRing(props);
+  const { isFocusVisible, focusProps } = useFocusRing(props);
   const child = React.Children.only(children) as ReactElement<any>;
 
   return React.cloneElement(
