@@ -12,9 +12,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "yarn eslint 'src/**/*.{js,jsx,ts,tsx,json,mdx}'",
-    "version": "npm version `auto version` -m 'Bump version to: %s [skip ci]'",
-    "publish": "npm publish && git push --follow-tags --set-upstream origin $branch",
-    "release": "auto changelog && npm run version && npm publish pkg --access public && auto release"
+    "auto:version": "npm version `auto version` -m 'version: %s [skip ci]'",
+    "auto:publish": "npm publish pkg --access public && git push --follow-tags --set-upstream origin $branch",
+    "release": "auto changelog && yarn auto:version && yarn auto:publish && auto release"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,mdx}": [
