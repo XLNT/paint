@@ -1,3 +1,25 @@
+# (Tue Jul 21 2020)
+
+#### 🚀 Enhancement
+
+- force deploy package [#2](https://github.com/XLNT/paint/pull/2) ([@shrugs](https://github.com/shrugs))
+
+#### 🐛 Bug Fix
+
+- fix: update publish scripts ([@shrugs](https://github.com/shrugs))
+- fix: rename workflow ([@shrugs](https://github.com/shrugs))
+- fix: move to pika for bundling ([@shrugs](https://github.com/shrugs))
+
+#### ⚠️ Pushed to `master`
+
+- chore: make build outout quieter ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.6.0 (Tue Jul 21 2020)
 
 #### 🚀 Enhancement
