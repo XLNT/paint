@@ -1,7 +1,6 @@
 {
   "name": "paint",
   "version": "0.2.0",
-  "private": true,
   "scripts": {
     "start": "start-storybook -p 9009 -s public --ci",
     "build": "yarn build:types && yarn build:ts",
