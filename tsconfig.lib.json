@@ -1,8 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "target": "es2020",
+    "module": "esnext",
+    "declaration": true,
     "noEmit": false,
-    "declaration": true
+    "strict": true
   }
 }

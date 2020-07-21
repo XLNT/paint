@@ -1,4 +1,4 @@
-import { WithClassName as _WithClassName } from './utils/WithClassName';
+// import { WithClassName as _WithClassName } from './utils/WithClassName';
 
 export { BranchingButton } from './components/BranchingButton/BranchingButton';
 export { Button } from './components/Button/Button';
@@ -25,7 +25,7 @@ export {
 // Utils
 //
 
-export type WithClassName = _WithClassName;
+// export type WithClassName = _WithClassName;
 export { cn } from './utils/cn';
 export { mergeProps } from './utils/mergeProps';
 export { usePaintFonts } from './utils/usePaintFonts';
