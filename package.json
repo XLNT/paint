@@ -4,16 +4,11 @@
   "private": true,
   "scripts": {
     "start": "start-storybook -p 9009 -s public --ci",
-    "build": "BABEL_ENV=production babel src -d dist",
+    "build": "NODE_ENV=production yarn babel src -d dist --extensions '.ts,.tsx,.js,.jsx' --source-maps inline",
     "build:storybook": "build-storybook -s public -o build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json,mdx}'"
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "lint": "yarn eslint 'src/**/*.{js,jsx,ts,tsx,json,mdx}'"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,mdx}": [
