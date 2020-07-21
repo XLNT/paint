@@ -10,7 +10,7 @@
     "build": "yarn build:types && yarn build:ts",
     "build:ts": "NODE_ENV=production yarn babel src -d dist --extensions '.ts,.tsx,.js,.jsx' --source-maps inline",
     "build:types": "tsc -P ./tsconfig.lib.json --emitDeclarationOnly",
-    "build:storybook": "build-storybook -s public -o build",
+    "build:storybook": "build-storybook -s public -o build --quiet",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "yarn eslint 'src/**/*.{js,jsx,ts,tsx,json,mdx}'",
