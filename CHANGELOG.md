@@ -20,6 +20,28 @@ Thank you, Matt Condon ([@shrugs](https://github.com/shrugs)), for all your work
 
 ---
 
+# v0.5.1 (Tue Jul 21 2020)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Matt Condon ([@shrugs](https://github.com/shrugs)), for all your work!
+
+#### 🐛 Bug Fix
+
+- fix: rename workflow (mattgcondon@gmail.com)
+- fix: move to pika for bundling ([@shrugs](https://github.com/shrugs))
+
+#### ⚠️ Pushed to `master`
+
+- chore: make build outout quieter ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 2
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+- Matt Condon (shrugs) (mattgcondon@gmail.com)
+
+---
+
 # v0.5.0 (Tue Jul 21 2020)
 
 :tada: This release contains work from a new contributor! :tada:
