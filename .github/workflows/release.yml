@@ -26,5 +26,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
+          npm whoami
           yarn install --frozen-lockfile
           yarn release

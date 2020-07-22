@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
-import OpenIcon from '~/client/assets/icon/tag/open.svg';
-import ClosedIcon from '~/client/assets/icon/tag/closed.svg';
+import OpenIcon from '../../icons/tag/open.svg';
+import ClosedIcon from '../../icons/tag/closed.svg';
 import { SubText } from '../Text/Text';
 import { cn } from '../../utils/cn';
 
