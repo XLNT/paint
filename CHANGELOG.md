@@ -1,3 +1,15 @@
+# v0.8.1 (Wed Jul 22 2020)
+
+#### 🐛 Bug Fix
+
+- fix: switch to main ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.8.0 (Wed Jul 22 2020)
 
 #### 🚀 Enhancement
