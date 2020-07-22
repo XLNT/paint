@@ -2,7 +2,6 @@
 
 export { BranchingButton } from './components/BranchingButton/BranchingButton';
 export { Button } from './components/Button/Button';
-export { Capacity } from './components/Capacity/Capacity';
 export { Chiclet } from './components/Chiclet/Chiclet';
 export { Notice } from './components/Notice/Notice';
 export { Notification } from './components/Notification/Notification';
