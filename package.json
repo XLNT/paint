@@ -13,7 +13,7 @@
     "eject": "react-scripts eject",
     "lint": "yarn eslint 'src/**/*.{js,jsx,ts,tsx,json,mdx}'",
     "auto:version": "npm version `auto version` -m 'version: %s [skip ci]'",
-    "auto:publish": "npm publish pkg && git push --follow-tags --set-upstream origin $branch",
+    "auto:publish": "npm publish pkg --access public && git push --follow-tags --set-upstream origin $branch",
     "release": "auto changelog && yarn auto:version && yarn build && yarn auto:publish && auto release"
   },
   "lint-staged": {
