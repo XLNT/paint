@@ -105,10 +105,7 @@
   "@pika/pack": {
     "pipeline": [
       [
-        "@pika/plugin-ts-standard-pkg",
-        {
-          "tsconfig": "tsconfig.lib.json"
-        }
+        "@pika/plugin-ts-standard-pkg"
       ],
       [
         "@pika/plugin-build-node"

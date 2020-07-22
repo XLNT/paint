@@ -1,10 +1,10 @@
-import React, { ElementType, forwardRef, Ref, HTMLProps } from 'react';
+import React, { ElementType, forwardRef, Ref, HTMLAttributes } from 'react';
 import { mergeProps } from '../../utils/mergeProps';
 
 export default function makeBasicElement<
   TElementType extends HTMLElement,
-  TProps extends HTMLProps<TElementType> = HTMLProps<TElementType>
->(baseAs: ElementType<any>, className?: string, defaultProps: HTMLProps<TElementType> = {}) {
+  TProps extends HTMLAttributes<TElementType> = HTMLAttributes<TElementType>
+>(baseAs: ElementType<any>, className?: string, defaultProps: HTMLAttributes<TElementType> = {}) {
   function Element(
     { as: newAs, ...extra }: TProps & { as?: ElementType<any> },
     ref: Ref<TElementType>,
