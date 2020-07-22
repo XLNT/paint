@@ -1,3 +1,26 @@
+# v0.7.3 (Wed Jul 22 2020)
+
+#### 🐛 Bug Fix
+
+- fix: manual version bump so publish is happy ([@shrugs](https://github.com/shrugs))
+- fix: manual auth ([@shrugs](https://github.com/shrugs))
+- fix: add env in setup-node? ([@shrugs](https://github.com/shrugs))
+- fix: remove capacity component that imports svgs cause pika doesn't webpack ([@shrugs](https://github.com/shrugs))
+- fix: try NOD ([@shrugs](https://github.com/shrugs))
+- fix: add whoami log ([@shrugs](https://github.com/shrugs))
+- fix: ensure access public in scoped ([@shrugs](https://github.com/shrugs))
+
+#### ⚠️ Pushed to `master`
+
+- workflow: try order-dependent uses ([@shrugs](https://github.com/shrugs))
+- workflow: better cache skip/isolation ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.7.1 (Tue Jul 21 2020)
 
 #### 🐛 Bug Fix
