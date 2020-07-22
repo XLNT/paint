@@ -1,3 +1,15 @@
+# v0.8.0 (Wed Jul 22 2020)
+
+#### 🚀 Enhancement
+
+- feat: fix attribute types, maybe ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.7.3 (Wed Jul 22 2020)
 
 #### 🐛 Bug Fix
