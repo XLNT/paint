@@ -1,3 +1,18 @@
+# v0.7.1 (Tue Jul 21 2020)
+
+#### 🐛 Bug Fix
+
+- fix: build project after updating version ([@shrugs](https://github.com/shrugs))
+- force deploy package [#4](https://github.com/XLNT/paint/pull/4) ([@shrugs](https://github.com/shrugs))
+- fix: remove access public ([@shrugs](https://github.com/shrugs))
+- force deploy package [#3](https://github.com/XLNT/paint/pull/3) ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.6.0 (Tue Jul 21 2020)
 
 #### 🚀 Enhancement
