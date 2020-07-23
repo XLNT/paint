@@ -1,3 +1,15 @@
+# v0.9.0 (Thu Jul 23 2020)
+
+#### 🚀 Enhancement
+
+- feat: various typing improvements for consumers ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.8.1 (Wed Jul 22 2020)
 
 #### 🐛 Bug Fix
