@@ -1,3 +1,15 @@
+# v0.10.2 (Thu Jul 23 2020)
+
+#### 🐛 Bug Fix
+
+- fix: only load webfontloader client-side ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.10.1 (Thu Jul 23 2020)
 
 #### 🐛 Bug Fix
