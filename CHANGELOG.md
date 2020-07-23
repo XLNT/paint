@@ -1,3 +1,15 @@
+# v0.10.1 (Thu Jul 23 2020)
+
+#### 🐛 Bug Fix
+
+- fix: story for LinkButton, add temp rel prop to ButtonProps ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.10.0 (Thu Jul 23 2020)
 
 #### 🚀 Enhancement
