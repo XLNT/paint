@@ -54,6 +54,21 @@ export const Primary = () => (
         <AnyIcon />
       </Button>
     </div>
+    <H3>Danger</H3>
+    <div className={cn('space-x-4', 'flex flex-row')}>
+      <Button onPress={action('onPress')} danger>
+        {text('Text', 'Hello World')}
+      </Button>
+      <Button onPress={action('onPress')} danger isDisabled>
+        {text('Text', 'Hello World')}
+      </Button>
+      <Button onPress={action('onPress')} danger icon>
+        <AnyIcon />
+      </Button>
+      <Button onPress={action('onPress')} danger icon isDisabled>
+        <AnyIcon />
+      </Button>
+    </div>
   </div>
 );
 
@@ -86,6 +101,21 @@ export const Secondary = () => (
         <AnyIcon />
       </Button>
     </div>
+    <H3>Danger</H3>
+    <div className={cn('space-x-4', 'flex flex-row')}>
+      <Button onPress={action('onPress')} secondary danger>
+        {text('Text', 'Hello World')}
+      </Button>
+      <Button onPress={action('onPress')} secondary danger isDisabled>
+        {text('Text', 'Hello World')}
+      </Button>
+      <Button onPress={action('onPress')} secondary danger icon>
+        <AnyIcon />
+      </Button>
+      <Button onPress={action('onPress')} secondary danger icon isDisabled>
+        <AnyIcon />
+      </Button>
+    </div>
   </div>
 );
 export const Tertiary = () => (
@@ -96,6 +126,13 @@ export const Tertiary = () => (
     </Button>
     <H3>Disabled</H3>
     <Button onPress={action('onPress')} tertiary isDisabled>
+      {text('Text', 'Hello World')}
+    </Button>
+    <H3>Danger</H3>
+    <Button onPress={action('onPress')} tertiary danger>
+      {text('Text', 'Hello World')}
+    </Button>
+    <Button onPress={action('onPress')} tertiary danger isDisabled>
       {text('Text', 'Hello World')}
     </Button>
   </div>

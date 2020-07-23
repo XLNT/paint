@@ -8,7 +8,11 @@ import { cn } from './cn';
 function Layout({ children }: PropsWithChildren<{}>) {
   usePaintFonts();
 
-  return <div className={cn('h-screen p-10', 'bg-drywall text-bruise')}>{children}</div>;
+  return (
+    <div className={cn('h-screen p-10', 'bg-drywall text-bruise antialiased font-sans')}>
+      {children}
+    </div>
+  );
 }
 
 export default Layout;

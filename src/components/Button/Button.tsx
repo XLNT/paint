@@ -15,6 +15,7 @@ interface ButtonProps extends AriaButtonProps, WithClassName {
   tertiary?: boolean;
   active?: boolean;
   icon?: boolean;
+  danger?: boolean;
 }
 
 interface ButtonState {
@@ -35,7 +36,8 @@ const primaryButtonStyles = ({
   focused = false,
   hovered = false,
   icon = false,
-}: Pick<ButtonProps, 'icon'> & ButtonState) =>
+  danger = false,
+}: Pick<ButtonProps, 'icon' | 'danger'> & ButtonState) =>
   cn(
     transitionStyles,
     focusStyles,
@@ -44,11 +46,16 @@ const primaryButtonStyles = ({
     icon && 'h-8 w-8',
     icon ? 'p-1' : 'py-1 px-4 space-x-2',
     'text-base',
-    disabled ? 'text-concrete' : 'text-bruise',
+    disabled ? 'text-concrete' : danger ? 'text-gesso' : 'text-bruise',
     'rounded border',
-    disabled ? 'border-concrete' : 'border-smudge',
-
-    disabled ? 'bg-transparent' : hovered || pressed ? 'bg-gesso' : 'bg-transparent',
+    disabled ? 'border-concrete' : danger ? 'border-gesso' : 'border-smudge',
+    disabled
+      ? 'bg-transparent'
+      : danger
+      ? 'bg-tomato'
+      : hovered || pressed
+      ? 'bg-gesso'
+      : 'bg-transparent',
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',
     !disabled && !pressed && (hovered || focused) && 'shadow-elevated',
   );
@@ -59,7 +66,8 @@ const secondaryButtonStyles = ({
   focused = false,
   hovered = false,
   icon = false,
-}: Pick<ButtonProps, 'icon'> & ButtonState) =>
+  danger = false,
+}: Pick<ButtonProps, 'icon' | 'danger'> & ButtonState) =>
   cn(
     transitionStyles,
     focusStyles,
@@ -68,7 +76,7 @@ const secondaryButtonStyles = ({
     icon && 'h-6 w-6',
     !icon && 'px-2 space-x-2',
     'font-bold',
-    disabled ? 'text-concrete' : 'text-bruise',
+    disabled ? 'text-concrete' : danger ? 'text-gesso' : 'text-bruise',
     'rounded border',
     icon
       ? 'border-transparent'
@@ -77,9 +85,13 @@ const secondaryButtonStyles = ({
       : pressed
       ? 'border-smudge'
       : focused
-      ? 'border-bruise'
+      ? danger
+        ? 'border-gesso'
+        : 'border-bruise'
       : 'border-transparent',
-    (hovered || pressed || focused) && !disabled && 'bg-gesso',
+    danger && !disabled
+      ? 'bg-tomato' //
+      : (hovered || pressed || focused) && !disabled && 'bg-gesso',
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',
     !disabled && !pressed && (hovered || focused) && 'shadow-elevated',
   );
@@ -88,14 +100,15 @@ const tertiaryButtonStyles = ({
   disabled = false,
   pressed = false,
   hovered = false,
-}: Pick<ButtonProps, 'icon'> & ButtonState) =>
+  danger = false,
+}: Pick<ButtonProps, 'icon' | 'danger'> & ButtonState) =>
   cn(
     transitionStyles,
     focusStyles,
     textStyles,
     childStyles,
     'px-2',
-    disabled && 'text-concrete',
+    disabled ? 'text-concrete' : danger ? 'text-tomato' : undefined,
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',
     !disabled && (hovered || pressed) && 'underline',
   );
@@ -142,6 +155,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(function Button(props
             secondary: props.secondary,
             tertiary: props.tertiary,
             icon: props.icon,
+            danger: props.danger,
             disabled: props.isDisabled,
             pressed: isPressed,
             focused: props.active || isFocused,
