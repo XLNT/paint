@@ -1,3 +1,15 @@
+# v0.10.0 (Thu Jul 23 2020)
+
+#### 🚀 Enhancement
+
+- feat: Button.danger ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.9.0 (Thu Jul 23 2020)
 
 #### 🚀 Enhancement
