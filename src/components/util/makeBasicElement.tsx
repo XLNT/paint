@@ -5,15 +5,13 @@ export default function makeBasicElement<
   TElementType extends HTMLElement,
   TProps extends HTMLAttributes<TElementType> = HTMLAttributes<TElementType>
 >(baseAs: ElementType<any>, className?: string, defaultProps: HTMLAttributes<TElementType> = {}) {
-  function Element(
-    { as: newAs, ...extra }: TProps & { as?: ElementType<any> },
-    ref: Ref<TElementType>,
-  ) {
+  type ElementProps = TProps & { as?: ElementType<any> };
+  function Element({ as: newAs, ...extra }: ElementProps, ref: Ref<TElementType>) {
     const As = newAs || baseAs;
     return <As ref={ref} {...mergeProps(defaultProps, extra, { className })} />;
   }
 
   Element.displayName = `Paint(${baseAs.toString()})`;
 
-  return forwardRef<TElementType, TProps>(Element as any);
+  return forwardRef<TElementType, ElementProps>(Element as any);
 }

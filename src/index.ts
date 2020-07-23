@@ -3,6 +3,7 @@
 export { BranchingButton } from './components/BranchingButton/BranchingButton';
 export { Button } from './components/Button/Button';
 export { Chiclet } from './components/Chiclet/Chiclet';
+export { Input } from './components/Input/Input';
 export { Notice } from './components/Notice/Notice';
 export { Notification } from './components/Notification/Notification';
 export { Section } from './components/Section/Section';
