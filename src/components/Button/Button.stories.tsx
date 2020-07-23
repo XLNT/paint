@@ -118,6 +118,7 @@ export const Secondary = () => (
     </div>
   </div>
 );
+
 export const Tertiary = () => (
   <div className={cn('space-y-4')}>
     <H3>Default / Idle</H3>
@@ -134,6 +135,20 @@ export const Tertiary = () => (
     </Button>
     <Button onPress={action('onPress')} tertiary danger isDisabled>
       {text('Text', 'Hello World')}
+    </Button>
+  </div>
+);
+
+export const LinkButton = () => (
+  <div className={cn('space-y-4')}>
+    <H3>Link Button</H3>
+    <Button
+      elementType="a"
+      target="_blank"
+      href="https://softspot.art"
+      rel="noopenner noreferrer nofollow"
+    >
+      Open Softspot in New Tab
     </Button>
   </div>
 );

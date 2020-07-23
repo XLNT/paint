@@ -16,6 +16,9 @@ interface ButtonProps extends AriaButtonProps, WithClassName {
   active?: boolean;
   icon?: boolean;
   danger?: boolean;
+  // TODO: remove when AriaButtonProps supports rel attribute
+  // https://github.com/adobe/react-spectrum/issues/833
+  rel?: string;
 }
 
 interface ButtonState {
@@ -150,18 +153,26 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(function Button(props
     <FocusRing autoFocus={props.autoFocus}>
       <ElementType
         ref={ref}
-        {...mergeProps(buttonProps, hoverProps, focusableProps, filterComponentProps(props), {
-          className: buttonStyles({
-            secondary: props.secondary,
-            tertiary: props.tertiary,
-            icon: props.icon,
-            danger: props.danger,
-            disabled: props.isDisabled,
-            pressed: isPressed,
-            focused: props.active || isFocused,
-            hovered: isHovered,
-          }),
-        })}
+        {...mergeProps(
+          buttonProps,
+          hoverProps,
+          focusableProps,
+          // TODO: remove when useButton supports rel passthrough
+          { rel: props.elementType === 'a' ? props.rel : undefined },
+          filterComponentProps(props),
+          {
+            className: buttonStyles({
+              secondary: props.secondary,
+              tertiary: props.tertiary,
+              icon: props.icon,
+              danger: props.danger,
+              disabled: props.isDisabled,
+              pressed: isPressed,
+              focused: props.active || isFocused,
+              hovered: isHovered,
+            }),
+          },
+        )}
       />
     </FocusRing>
   );
