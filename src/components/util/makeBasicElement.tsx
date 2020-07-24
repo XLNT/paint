@@ -1,5 +1,5 @@
 import React, { ElementType, forwardRef, Ref, HTMLAttributes } from 'react';
-import { mergeProps } from '../../utils/mergeProps';
+import { mergeProps } from '@react-aria/utils';
 
 export default function makeBasicElement<
   TElementType extends HTMLElement,

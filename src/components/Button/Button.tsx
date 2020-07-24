@@ -5,10 +5,11 @@ import FocusRing from '../util/FocusRing';
 import mergeRefs from 'react-merge-refs';
 import { WithClassName } from '../../utils/WithClassName';
 import { useFocusable } from '@react-aria/focus';
-import { mergeProps } from '../../utils/mergeProps';
 import { filterComponentProps } from '../../utils/filterComponentProps';
 import { cn } from '../../utils/cn';
 import { useHover } from '@react-aria/interactions';
+import { mergeProps } from '@react-aria/utils';
+import { filterEventHandlers } from '../../utils/filterEventHandlers';
 
 interface ButtonProps extends AriaButtonProps, WithClassName {
   secondary?: boolean;
@@ -140,12 +141,18 @@ const buttonStyles = ({
 export const Button = forwardRef<HTMLElement, ButtonProps>(function Button(props, outerRef) {
   const innerRef = useRef<HTMLElement>(null);
   const ref = mergeRefs([outerRef, innerRef]);
-  const { elementType: ElementType = 'button' } = props;
+  const {
+    elementType: ElementType = 'button',
+    isDisabled,
+    secondary,
+    tertiary,
+    icon,
+    danger,
+    active,
+  } = props;
+
   const { isPressed, buttonProps } = useButton(props, ref);
-
-  const [isHovered, setIsHovered] = useState(false);
-  const { hoverProps } = useHover({ ...props, onHoverChange: setIsHovered });
-
+  const { hoverProps, isHovered } = useHover(props);
   const [isFocused, setIsFocused] = useState(false);
   const { focusableProps } = useFocusable({ ...props, onFocusChange: setIsFocused }, ref);
 
@@ -159,16 +166,17 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(function Button(props
           focusableProps,
           // TODO: remove when useButton supports rel passthrough
           { rel: props.elementType === 'a' ? props.rel : undefined },
+          filterEventHandlers(props),
           filterComponentProps(props),
           {
             className: buttonStyles({
-              secondary: props.secondary,
-              tertiary: props.tertiary,
-              icon: props.icon,
-              danger: props.danger,
-              disabled: props.isDisabled,
+              secondary: secondary,
+              tertiary: tertiary,
+              icon: icon,
+              danger: danger,
+              disabled: isDisabled,
               pressed: isPressed,
-              focused: props.active || isFocused,
+              focused: active || isFocused,
               hovered: isHovered,
             }),
           },

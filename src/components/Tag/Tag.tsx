@@ -6,9 +6,9 @@ import { useButton } from '@react-aria/button';
 import { useHover } from '@react-aria/interactions';
 import { useFocusable } from '@react-aria/focus';
 import FocusRing from '../util/FocusRing';
-import { mergeProps } from '../../utils/mergeProps';
 import { cn } from '../../utils/cn';
 import { filterComponentProps } from '../../utils/filterComponentProps';
+import { mergeProps } from '@react-aria/utils';
 
 interface TagProps extends AriaButtonProps, WithClassName {
   active?: boolean;
@@ -52,8 +52,7 @@ export const Tag = forwardRef<HTMLButtonElement, TagProps>(function Tag(props, o
   const { elementType: ElementType = 'button' } = props;
 
   const { isPressed, buttonProps } = useButton(props, ref);
-  const [isHovered, setIsHovered] = useState(false);
-  const { hoverProps } = useHover({ ...props, onHoverChange: setIsHovered });
+  const { hoverProps, isHovered } = useHover(props);
 
   const [isFocused, setIsFocused] = useState(false);
   const { focusableProps } = useFocusable({ ...props, onFocusChange: setIsFocused }, ref);
