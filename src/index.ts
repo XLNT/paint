@@ -27,5 +27,5 @@ export {
 
 // export type WithClassName = _WithClassName;
 export { cn } from './utils/cn';
-export { mergeProps } from './utils/mergeProps';
+export { mergeProps } from '@react-aria/utils';
 export { usePaintFonts } from './utils/usePaintFonts';
