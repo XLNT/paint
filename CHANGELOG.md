@@ -1,3 +1,15 @@
+# v0.11.1 (Fri Jul 24 2020)
+
+#### 🐛 Bug Fix
+
+- fix: export tooltipo ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.11.0 (Fri Jul 24 2020)
 
 #### 🚀 Enhancement
