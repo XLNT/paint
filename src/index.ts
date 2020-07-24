@@ -9,6 +9,7 @@ export { Notification } from './components/Notification/Notification';
 export { Section } from './components/Section/Section';
 export { Slug } from './components/Slug/Slug';
 export { Tag } from './components/Tag/Tag';
+export { Tooltip } from './components/Tooltip/Tooltip';
 export {
   H1,
   H2,
