@@ -1,3 +1,19 @@
+# v0.11.0 (Fri Jul 24 2020)
+
+#### 🚀 Enhancement
+
+- feat: update main libs, add Tooltip component ([@shrugs](https://github.com/shrugs))
+
+#### 🐛 Bug Fix
+
+- fix: export correct mergeProps ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.10.2 (Thu Jul 23 2020)
 
 #### 🐛 Bug Fix
