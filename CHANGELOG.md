@@ -1,3 +1,16 @@
+# v0.14.1 (Mon Jul 27 2020)
+
+#### 🐛 Bug Fix
+
+- fix: move back to global styles because pika sucks ([@shrugs](https://github.com/shrugs))
+- fix: correctly export new components ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.14.0 (Mon Jul 27 2020)
 
 #### 🚀 Enhancement
