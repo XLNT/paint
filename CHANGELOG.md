@@ -1,3 +1,19 @@
+# v0.14.0 (Mon Jul 27 2020)
+
+#### 🚀 Enhancement
+
+- feat: Skeleton with css module ([@shrugs](https://github.com/shrugs))
+
+#### ⚠️ Pushed to `master`
+
+- Merge branch 'main' of github.com:XLNT/paint into main ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.13.0 (Mon Jul 27 2020)
 
 #### 🚀 Enhancement
