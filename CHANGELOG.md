@@ -1,3 +1,15 @@
+# v0.13.0 (Mon Jul 27 2020)
+
+#### 🚀 Enhancement
+
+- feat: copy over css assets ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.12.0 (Mon Jul 27 2020)
 
 #### 🚀 Enhancement
