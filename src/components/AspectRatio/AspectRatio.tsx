@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, HTMLProps } from 'react';
 import { cn } from '../../utils/cn';
 
-function AspectRatio({
+export function AspectRatio({
   aspectRatio,
   className,
   children,
@@ -20,5 +20,3 @@ function AspectRatio({
     </div>
   );
 }
-
-export default AspectRatio;

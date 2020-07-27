@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 import { H3 } from '../Text/Text';
-import AspectRatio from './AspectRatio';
+import { AspectRatio } from './AspectRatio';
 
 export default {
   title: 'Aspect Ratio',

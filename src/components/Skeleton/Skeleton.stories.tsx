@@ -1,7 +1,7 @@
 import React from 'react';
-import Skeleton from './Skeleton';
 import { cn } from '../../utils/cn';
-import AspectRatio from '../AspectRatio/AspectRatio';
+import { Skeleton } from './Skeleton';
+import { AspectRatio } from '../AspectRatio/AspectRatio';
 
 export default {
   title: 'Skeleton',
