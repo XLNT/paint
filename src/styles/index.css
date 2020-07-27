@@ -4,5 +4,6 @@
 /* purgecss end ignore */
 
 @import './_utils.css';
+@import './_skeleton.css';
 
 @import 'tailwindcss/utilities';
