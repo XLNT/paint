@@ -9,7 +9,6 @@ import { filterComponentProps } from '../../utils/filterComponentProps';
 import { cn } from '../../utils/cn';
 import { useHover } from '@react-aria/interactions';
 import { mergeProps } from '@react-aria/utils';
-import { filterEventHandlers } from '../../utils/filterEventHandlers';
 
 interface ButtonProps extends AriaButtonProps, WithClassName {
   secondary?: boolean;
@@ -166,14 +165,13 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(function Button(props
           focusableProps,
           // TODO: remove when useButton supports rel passthrough
           { rel: props.elementType === 'a' ? props.rel : undefined },
-          filterEventHandlers(props),
           filterComponentProps(props),
           {
             className: buttonStyles({
-              secondary: secondary,
-              tertiary: tertiary,
-              icon: icon,
-              danger: danger,
+              secondary,
+              tertiary,
+              icon,
+              danger,
               disabled: isDisabled,
               pressed: isPressed,
               focused: active || isFocused,
