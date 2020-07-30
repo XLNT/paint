@@ -1,3 +1,15 @@
+# v0.15.1 (Thu Jul 30 2020)
+
+#### 🐛 Bug Fix
+
+- fix: stop passing though on* handlers to avoid unknown event handler property ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.15.0 (Thu Jul 30 2020)
 
 #### 🚀 Enhancement
