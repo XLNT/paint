@@ -152,3 +152,7 @@ export const LinkButton = () => (
     </Button>
   </div>
 );
+
+export const SubmitButton = () => (
+  <Button onPress={action('onPress')} elementType="input" value={text('Text', 'Submit')} />
+);
