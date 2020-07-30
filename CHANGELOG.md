@@ -1,3 +1,15 @@
+# v0.15.0 (Thu Jul 30 2020)
+
+#### 🚀 Enhancement
+
+- feat: update deps to latest, fixes SSR issues ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.14.1 (Mon Jul 27 2020)
 
 #### 🐛 Bug Fix
