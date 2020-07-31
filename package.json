@@ -118,7 +118,8 @@
         "@pika/plugin-copy-assets",
         {
           "files": [
-            "src/styles/"
+            "src/styles/",
+            "tailwind.config.js"
           ]
         }
       ]
