@@ -1,3 +1,15 @@
+# v0.16.0 (Fri Jul 31 2020)
+
+#### 🚀 Enhancement
+
+- feat: copy tailwind config file ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.15.2 (Thu Jul 30 2020)
 
 #### 🐛 Bug Fix
