@@ -19,7 +19,6 @@ interface ButtonProps extends AriaButtonProps, WithClassName {
   // TODO: remove when AriaButtonProps supports rel attribute
   // https://github.com/adobe/react-spectrum/issues/833
   rel?: string;
-  value?: string;
 }
 
 interface ButtonState {
@@ -166,7 +165,6 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(function Button(props
           focusableProps,
           // TODO: remove when useButton supports rel passthrough
           { rel: props.elementType === 'a' ? props.rel : undefined },
-          { value: props.elementType === 'input' ? props.value : undefined },
           filterComponentProps(props),
           {
             className: buttonStyles({
