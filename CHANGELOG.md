@@ -1,3 +1,16 @@
+# v0.16.1 (Sun Aug 16 2020)
+
+#### 🐛 Bug Fix
+
+- fix: export WithClassName, fix button story ([@shrugs](https://github.com/shrugs))
+- fix: remove value attr passthrough for input buttons ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.16.0 (Fri Jul 31 2020)
 
 #### 🚀 Enhancement
