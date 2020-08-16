@@ -154,5 +154,7 @@ export const LinkButton = () => (
 );
 
 export const SubmitButton = () => (
-  <Button onPress={action('onPress')} elementType="input" value={text('Text', 'Submit')} />
+  <Button onPress={action('onPress')} elementType="input">
+    {text('Text', 'Submit')}
+  </Button>
 );

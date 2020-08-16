@@ -1,4 +1,11 @@
 ///
+// Helper Types
+//
+
+import { WithClassName as _WithClassName } from './utils/WithClassName';
+export type WithClassName = _WithClassName;
+
+///
 // Components
 //
 
