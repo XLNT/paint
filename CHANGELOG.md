@@ -1,3 +1,19 @@
+# v0.18.0 (Wed Aug 19 2020)
+
+#### 🚀 Enhancement
+
+- feat: swap to @react-hook/merged-refs ([@shrugs](https://github.com/shrugs))
+
+#### ⚠️ Pushed to `master`
+
+- Revert "feat: swap to @react-hook/merged-refs" ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.17.0 (Wed Aug 19 2020)
 
 #### 🚀 Enhancement
