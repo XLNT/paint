@@ -22,10 +22,10 @@
     ]
   },
   "dependencies": {
-    "@react-aria/button": "^3.1.0",
-    "@react-aria/focus": "^3.1.0",
-    "@react-aria/interactions": "^3.1.0",
-    "@react-aria/utils": "^3.1.0",
+    "@react-aria/button": "^3.2.1",
+    "@react-aria/focus": "^3.2.0",
+    "@react-aria/interactions": "^3.2.0",
+    "@react-aria/utils": "^3.2.0",
     "classnames": "^2.2.6",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
@@ -58,7 +58,7 @@
     "@pika/plugin-build-web": "^0.9.2",
     "@pika/plugin-copy-assets": "^0.9.2",
     "@pika/plugin-ts-standard-pkg": "^0.9.2",
-    "@react-types/button": "^3.0.2",
+    "@react-types/button": "^3.2.0",
     "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-info": "^5.3.19",

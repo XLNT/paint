@@ -159,26 +159,18 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(function Button(props
     <FocusRing autoFocus={props.autoFocus}>
       <ElementType
         ref={ref}
-        {...mergeProps(
-          buttonProps,
-          hoverProps,
-          focusableProps,
-          // TODO: remove when useButton supports rel passthrough
-          { rel: props.elementType === 'a' ? props.rel : undefined },
-          filterComponentProps(props),
-          {
-            className: buttonStyles({
-              secondary,
-              tertiary,
-              icon,
-              danger,
-              disabled: isDisabled,
-              pressed: isPressed,
-              focused: active || isFocused,
-              hovered: isHovered,
-            }),
-          },
-        )}
+        {...mergeProps(buttonProps, hoverProps, focusableProps, filterComponentProps(props), {
+          className: buttonStyles({
+            secondary,
+            tertiary,
+            icon,
+            danger,
+            disabled: isDisabled,
+            pressed: isPressed,
+            focused: active || isFocused,
+            hovered: isHovered,
+          }),
+        })}
       />
     </FocusRing>
   );
