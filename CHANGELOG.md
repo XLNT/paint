@@ -1,3 +1,15 @@
+# v0.17.0 (Wed Aug 19 2020)
+
+#### 🚀 Enhancement
+
+- feat: update to latest, remove block classname on skeleton ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.16.1 (Sun Aug 16 2020)
 
 #### 🐛 Bug Fix
