@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef, useState } from 'react';
 import { WithClassName } from '../../utils/WithClassName';
 import { AriaButtonProps } from '@react-types/button';
-import mergeRefs from 'react-merge-refs';
+import useMergedRef from '@react-hook/merged-ref';
 import { useButton } from '@react-aria/button';
 import { useHover } from '@react-aria/interactions';
 import { useFocusable } from '@react-aria/focus';
@@ -48,7 +48,7 @@ const tagStyles = ({
 
 export const Tag = forwardRef<HTMLButtonElement, TagProps>(function Tag(props, outerRef) {
   const innerRef = useRef<HTMLElement>(null);
-  const ref = mergeRefs([outerRef, innerRef]);
+  const ref = useMergedRef(outerRef, innerRef);
   const { elementType: ElementType = 'button' } = props;
 
   const { isPressed, buttonProps } = useButton(props, ref);

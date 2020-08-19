@@ -2,7 +2,7 @@ import React, { forwardRef, useRef, useState } from 'react';
 import { AriaButtonProps } from '@react-types/button';
 import { useButton } from '@react-aria/button';
 import FocusRing from '../util/FocusRing';
-import mergeRefs from 'react-merge-refs';
+import useMergedRef from '@react-hook/merged-ref';
 import { WithClassName } from '../../utils/WithClassName';
 import { useFocusable } from '@react-aria/focus';
 import { filterComponentProps } from '../../utils/filterComponentProps';
@@ -139,7 +139,7 @@ const buttonStyles = ({
 
 export const Button = forwardRef<HTMLElement, ButtonProps>(function Button(props, outerRef) {
   const innerRef = useRef<HTMLElement>(null);
-  const ref = mergeRefs([outerRef, innerRef]);
+  const ref = useMergedRef(outerRef, innerRef);
   const {
     elementType: ElementType = 'button',
     isDisabled,
