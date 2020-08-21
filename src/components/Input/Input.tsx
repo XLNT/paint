@@ -11,6 +11,7 @@ export const Input = makeBasicElement<HTMLInputElement, InputHTMLAttributes<HTML
     'rounded border',
     'py-3 px-4',
     'leading-tight',
+    'overflow-hidden',
     'focus:outline-none',
     'focus:bg-gesso',
   ),
