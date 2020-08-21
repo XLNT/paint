@@ -1,3 +1,15 @@
+# v0.18.1 (Fri Aug 21 2020)
+
+#### ⚠️ Pushed to `master`
+
+- make input placeholder truncate ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.18.0 (Wed Aug 19 2020)
 
 #### 🚀 Enhancement
