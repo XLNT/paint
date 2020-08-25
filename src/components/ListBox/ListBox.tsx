@@ -106,7 +106,11 @@ ListBox.Option = function ListBoxOption<T>({
     <li
       {...mergeProps(optionProps, focusProps)}
       ref={ref}
-      className={cn(isSelected && 'bg-smudge', isFocusVisible && 'shadow-outline')}
+      className={cn(
+        isDisabled ? 'cursor-not-allowed' : 'cursor-pointer',
+        isSelected && 'bg-smudge',
+        isFocusVisible && 'shadow-outline',
+      )}
     >
       {item.rendered}
     </li>

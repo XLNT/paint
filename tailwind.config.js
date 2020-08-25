@@ -42,15 +42,18 @@ module.exports = {
         h1: '3.815rem',
       },
       width: {
-        '80': '20rem',
-        '96': '24rem',
+        80: '20rem',
+        96: '24rem',
       },
       maxWidth: {
-        '48': '12rem',
+        48: '12rem',
         '10xl': '120rem',
       },
       letterSpacing: {
         button: '0.02em',
+      },
+      inset: {
+        full: '100%',
       },
     },
   },
