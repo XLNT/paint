@@ -16,9 +16,6 @@ interface ButtonProps extends AriaButtonProps, WithClassName {
   active?: boolean;
   icon?: boolean;
   danger?: boolean;
-  // TODO: remove when AriaButtonProps supports rel attribute
-  // https://github.com/adobe/react-spectrum/issues/833
-  rel?: string;
 }
 
 interface ButtonState {
