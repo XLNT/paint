@@ -1,15 +1,18 @@
-import React, { PropsWithChildren, ReactNode, useReducer } from 'react';
+import React, { PropsWithChildren, ReactNode, useReducer, useRef } from 'react';
 import { cn } from '../../utils/cn';
 import { WithClassName } from '../../utils/WithClassName';
 import { InlineButton } from '../InlineButton/InlineButton';
 import { Item } from '@react-stately/collections';
+import { useSearchFieldState } from '@react-stately/searchfield';
+import { useSearchField } from '@react-aria/searchfield';
+import { AriaSearchFieldProps } from '@react-types/searchfield';
+import { ListBox } from '../ListBox/ListBox';
+import { Text } from '../Text/Text';
 
 import { ReactComponent as SearchIcon } from '../../icons/search.svg';
 import { ReactComponent as MenuIcon } from '../../icons/menu.svg';
 import { ReactComponent as CloseIcon } from '../../icons/close.svg';
-import { SearchField } from '../SearchField/SearchField';
-import { ListBox } from '../ListBox/ListBox';
-import { Text } from '../Text/Text';
+import { mergeProps } from '@react-aria/utils';
 
 interface ResultItem {
   key: string;
@@ -73,6 +76,19 @@ export function Explorer<TResultItem extends ResultItem>({
   const canSearch = !!setSearch;
 
   const [{ isSearching, isMenu }, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const searchProps: AriaSearchFieldProps = {
+    value: search,
+    onChange: setSearch,
+    'aria-label': 'Search',
+    'aria-autocomplete': 'list',
+    'aria-haspopup': 'listbox',
+    excludeFromTabOrder: true,
+    placeholder: 'Aa',
+    autoFocus: true,
+  };
+  const state = useSearchFieldState(searchProps);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const { inputProps, clearButtonProps } = useSearchField(searchProps, state, inputRef as any);
 
   return (
     <div className={cn(className, 'relative bg-gesso', 'flex flex-col min-w-0')}>
@@ -90,9 +106,9 @@ export function Explorer<TResultItem extends ResultItem>({
           start
         )}
         {isSearching ? (
-          <SearchField
-            value={search}
-            onChange={setSearch}
+          <input
+            ref={inputRef}
+            {...inputProps}
             className={cn(
               'm-2 leading-normal',
               'overflow-hidden',
@@ -113,14 +129,17 @@ export function Explorer<TResultItem extends ResultItem>({
           <Text className={cn('flex-1', 'p-2 truncate')}>{content}</Text>
         )}
         <InlineButton
+          {...mergeProps(isSearching ? clearButtonProps : {}, {
+            onPress: () =>
+              isSearching
+                ? dispatch({ type: 'toggleSearching' })
+                : dispatch({ type: 'toggleMenu' }),
+          })}
           className={cn(
             'border-l border-t border-r',
             isMenu ? 'border-bruise' : 'border-transparent',
           )}
           icon={isMenu || isSearching ? <CloseIcon /> : <MenuIcon />}
-          onPress={() =>
-            isSearching ? dispatch({ type: 'toggleSearching' }) : dispatch({ type: 'toggleMenu' })
-          }
         />
         {isMenu && (
           <div

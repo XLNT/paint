@@ -55,15 +55,19 @@ export const EventExplorer = () => {
       search={search}
       setSearch={setSearch}
       content="Ars Electronica + .art Domains Curated"
-      searching={search.length === 1}
+      searching={search.length === 1 || search.length > 2}
       placeholder={<Text className={cn('p-2 text-center')}>Placeholder text...</Text>}
       loading={<Text className={cn('p-2 text-center')}>Loading state...</Text>}
       results={search.length > 1 ? SEARCH_RESULTS : undefined}
       renderResultItem={(item) => (
-        <div className={cn('flex flex-row justify-between items-center', 'p-2', 'hover:bg-smudge')}>
-          <Text className={cn('flex-1 truncate')}>{item.title}</Text>
-          <Text>{item.type}</Text>
-        </div>
+        <a href="https://google.com">
+          <div
+            className={cn('flex flex-row justify-between items-center', 'p-2', 'hover:bg-smudge')}
+          >
+            <Text className={cn('flex-1 truncate')}>{item.title}</Text>
+            <Text>{item.type}</Text>
+          </div>
+        </a>
       )}
       menu={menu}
     >
