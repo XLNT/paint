@@ -1,3 +1,28 @@
+# v0.19.0 (Wed Aug 26 2020)
+
+#### 🚀 Enhancement
+
+- feat: explorer ([@shrugs](https://github.com/shrugs))
+- feat: downshift select ([@shrugs](https://github.com/shrugs))
+- feat: better border styling with tailwind plugin ([@shrugs](https://github.com/shrugs))
+- feat: integrated clear button into explorer search field ([@shrugs](https://github.com/shrugs))
+- feat: explorer supports serching ([@shrugs](https://github.com/shrugs))
+
+#### 🐛 Bug Fix
+
+- fix: build errors ([@shrugs](https://github.com/shrugs))
+
+#### ⚠️ Pushed to `master`
+
+- checkpoint: listbox ([@shrugs](https://github.com/shrugs))
+- checkpoint: initial explorer markup ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.18.1 (Fri Aug 21 2020)
 
 #### ⚠️ Pushed to `master`
