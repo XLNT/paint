@@ -1,6 +1,6 @@
 {
   "name": "@xlnt/paint",
-  "version": "0.19.2",
+  "version": "0.19.3",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
