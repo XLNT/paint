@@ -77,6 +77,7 @@ export function Select<TSelectItem extends SelectItem>({
           items.map((item, index) => (
             <li
               key={item.value}
+              className={cn('p-2', highlightedIndex === index && 'bg-smudge')}
               {...getItemProps({
                 item,
                 index,
