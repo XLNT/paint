@@ -1,3 +1,15 @@
+# v0.19.4 (Wed Aug 26 2020)
+
+#### 🐛 Bug Fix
+
+- fix: wrap content in span, not p ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.19.3 (Wed Aug 26 2020)
 
 #### 🐛 Bug Fix
