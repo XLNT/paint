@@ -76,6 +76,7 @@ export function Explorer<TResultItem extends ResultItem>({
   const canSearch = !!setSearch;
 
   const [{ isSearching, isMenu }, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const isPopover = isSearching || isMenu;
   const searchProps: AriaSearchFieldProps = {
     value: search,
     onChange: setSearch,
@@ -96,8 +97,9 @@ export function Explorer<TResultItem extends ResultItem>({
         {canSearch ? (
           <InlineButton
             className={cn(
-              'border-l border-t border-r',
-              isSearching ? 'border-bruise' : 'border-transparent',
+              'border border-transparent',
+              isMenu && 'border-b-bruise',
+              isSearching && 'border-t-bruise border-l-bruise border-r-bruise',
             )}
             icon={<SearchIcon />}
             onPress={() => dispatch({ type: 'toggleSearching' })}
@@ -110,17 +112,23 @@ export function Explorer<TResultItem extends ResultItem>({
             ref={inputRef}
             {...inputProps}
             className={cn(
-              'm-2 leading-normal',
+              'p-2 leading-normal',
               'overflow-hidden',
               'bg-transparent placeholder-concrete',
               'outline-none',
+              'border-b',
+              isPopover ? 'border-bruise' : 'border-transparent',
             )}
             autoFocus
           />
         ) : canSearch ? (
           <InlineButton
             onPress={() => dispatch({ type: 'toggleSearching' })}
-            className={cn('flex-1 min-w-0')}
+            className={cn(
+              'flex-1 min-w-0',
+              'border-b',
+              isPopover ? 'border-bruise' : 'border-transparent',
+            )}
             isDisabled={!canSearch}
           >
             {content}
@@ -136,29 +144,32 @@ export function Explorer<TResultItem extends ResultItem>({
                 : dispatch({ type: 'toggleMenu' }),
           })}
           className={cn(
-            'border-l border-t border-r',
-            isMenu ? 'border-bruise' : 'border-transparent',
+            'border border-transparent',
+            isSearching && 'border-b-bruise',
+            isMenu && 'border-t-bruise border-l-bruise border-r-bruise',
           )}
           icon={isMenu || isSearching ? <CloseIcon /> : <MenuIcon />}
         />
-        {isMenu && (
+        {isPopover && (
           <div
-            className={cn('absolute top-full left-0 right-0', 'bg-gesso', 'border border-bruise')}
-          >
-            {menu}
-          </div>
-        )}
-        {isSearching && (
-          <div
-            className={cn('absolute top-full left-0 right-0', 'bg-gesso', 'border border-bruise')}
-          >
-            {!searching && (!results || results.length === 0) && placeholder}
-            {results && results.length > 0 && (
-              <ListBox items={results} selectionMode="single">
-                {(item) => <Item key={item.key}>{renderResult?.(item)}</Item>}
-              </ListBox>
+            className={cn(
+              'absolute top-full left-0 right-0',
+              'bg-gesso',
+              'border-l border-r border-b border-bruise',
             )}
-            {searching && loading}
+          >
+            {isMenu && menu}
+            {isSearching && (
+              <>
+                {!searching && (!results || results.length === 0) && placeholder}
+                {results && results.length > 0 && (
+                  <ListBox items={results} selectionMode="single">
+                    {(item) => <Item key={item.key}>{renderResult?.(item)}</Item>}
+                  </ListBox>
+                )}
+                {searching && loading}
+              </>
+            )}
           </div>
         )}
       </div>
