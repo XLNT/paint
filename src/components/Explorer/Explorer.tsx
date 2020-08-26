@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode, useReducer, ReactElement } from 'react';
+import React, { PropsWithChildren, ReactNode, useReducer, ReactElement, cloneElement } from 'react';
 import { cn } from '../../utils/cn';
 import { WithClassName } from '../../utils/WithClassName';
 import { InlineButton } from '../InlineButton/InlineButton';
@@ -23,9 +23,9 @@ interface ExplorerProps<TResultItem extends ResultItem>
   itemToString?: (item: TResultItem | null) => string;
   onSelectItem?: (item: TResultItem | null | undefined) => void;
 
-  menu?: ReactNode;
-  start?: ReactNode;
-  end?: ReactNode;
+  menu?: ReactElement;
+  start?: ReactElement;
+  end?: ReactElement;
   content?: ReactNode;
 
   searchIcon: ReactElement;
@@ -97,6 +97,21 @@ export function Explorer<TResultItem extends ResultItem>({
     onSelectedItemChange: ({ selectedItem }) => onSelectItem?.(selectedItem),
   });
 
+  const startButtonClassnames = cn(
+    'border border-transparent',
+    isMenu && 'border-b-bruise',
+    isSearching && 'border-t-bruise border-l-bruise border-r-bruise',
+  );
+  const middleElementClassnames = cn(
+    'border-b',
+    isPopover ? 'border-bruise' : 'border-transparent',
+  );
+  const endButtonClassnames = cn(
+    'border border-transparent',
+    isSearching && 'border-b-bruise',
+    isMenu && 'border-t-bruise border-l-bruise border-r-bruise',
+  );
+
   return (
     <div className={cn(className, 'relative bg-gesso', 'flex flex-col min-w-0')}>
       <div
@@ -105,44 +120,35 @@ export function Explorer<TResultItem extends ResultItem>({
       >
         {canSearch ? (
           <InlineButton
-            className={cn(
-              'border border-transparent',
-              isMenu && 'border-b-bruise',
-              isSearching && 'border-t-bruise border-l-bruise border-r-bruise',
-            )}
+            className={startButtonClassnames}
             icon={searchIcon}
             onPress={() => dispatch({ type: 'toggleSearching' })}
           />
         ) : (
-          start
+          cloneElement(start as ReactElement, { className: startButtonClassnames })
         )}
         {isSearching ? (
           <input
             {...getInputProps()}
             className={cn(
+              middleElementClassnames,
               'p-2 leading-normal',
               'overflow-hidden',
               'bg-transparent placeholder-concrete',
               'outline-none',
-              'border-b',
-              isPopover ? 'border-bruise' : 'border-transparent',
             )}
             autoFocus
           />
         ) : canSearch ? (
           <InlineButton
             onPress={() => dispatch({ type: 'toggleSearching' })}
-            className={cn(
-              'flex-1 min-w-0',
-              'border-b',
-              isPopover ? 'border-bruise' : 'border-transparent',
-            )}
+            className={cn(middleElementClassnames, 'flex-1 min-w-0')}
             isDisabled={!canSearch}
           >
             {content}
           </InlineButton>
         ) : (
-          <Text className={cn('flex-1', 'p-2 truncate')}>{content}</Text>
+          <Text className={cn('flex-1', 'p-2 truncate select-none')}>{content}</Text>
         )}
         <InlineButton
           {...mergeProps(isSearching ? { onPress: reset } : {}, {
@@ -151,11 +157,7 @@ export function Explorer<TResultItem extends ResultItem>({
                 ? dispatch({ type: 'toggleSearching' })
                 : dispatch({ type: 'toggleMenu' }),
           })}
-          className={cn(
-            'border border-transparent',
-            isSearching && 'border-b-bruise',
-            isMenu && 'border-t-bruise border-l-bruise border-r-bruise',
-          )}
+          className={endButtonClassnames}
           icon={isMenu || isSearching ? closeIcon : menuIcon}
         />
         <div

@@ -106,7 +106,7 @@ export const EventExplorer = () => {
       menuIcon={<MenuIcon />}
       closeIcon={<CloseIcon />}
     >
-      <InlineButtonGroup className={cn('w-64')}>
+      <InlineButtonGroup className={cn('w-full')}>
         <Select
           className={cn('flex-1')}
           items={ITEMS}
