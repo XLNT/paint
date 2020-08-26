@@ -153,7 +153,7 @@ export function Explorer<TResultItem extends ResultItem>({
         {isPopover && (
           <div
             className={cn(
-              'absolute top-full left-0 right-0',
+              'absolute top-full left-0 right-0 z-10',
               'bg-gesso',
               'border-l border-r border-b border-bruise',
             )}
@@ -163,7 +163,7 @@ export function Explorer<TResultItem extends ResultItem>({
               <>
                 {!searching && (!results || results.length === 0) && placeholder}
                 {results && results.length > 0 && (
-                  <ListBox items={results} selectionMode="single">
+                  <ListBox items={results} selectionMode="single" shouldFocusWrap>
                     {(item) => <Item key={item.key}>{renderResult?.(item)}</Item>}
                   </ListBox>
                 )}

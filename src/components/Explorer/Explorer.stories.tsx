@@ -7,11 +7,17 @@ import { Skeleton } from '../Skeleton/Skeleton';
 import { Text } from '../Text/Text';
 import { Button } from '../Button/Button';
 import { ReactComponent as BackIcon } from '../../icons/nav left.svg';
-import { ReactComponent as ToggleIcon } from '../../icons/nav down.svg';
+import { Select, SelectItem } from '../Select/Select';
 
 export default {
   title: 'Explorer',
 };
+
+const ITEMS: SelectItem[] = new Array(100).fill(0).map((_, i) => ({
+  value: i.toString(),
+}));
+
+console.log(ITEMS);
 
 const backLink = <InlineButton elementType="a" href="https://google.com" icon={<BackIcon />} />;
 const menu = (
@@ -72,12 +78,12 @@ export const EventExplorer = () => {
       menu={menu}
     >
       <InlineButtonGroup className={cn('w-64')}>
-        <InlineButton className={cn('flex-1')} icon={<ToggleIcon />}>
+        <Select className={cn('flex-1')} items={ITEMS} renderItem={(item) => item.value}>
           Medium
-        </InlineButton>
-        <InlineButton className={cn('flex-1')} icon={<ToggleIcon />}>
+        </Select>
+        <Select className={cn('flex-1')} items={ITEMS} renderItem={(item) => item.value}>
           Geography
-        </InlineButton>
+        </Select>
       </InlineButtonGroup>
     </Explorer>
   );
