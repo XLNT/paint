@@ -156,7 +156,7 @@ export function Explorer<TResultItem extends ResultItem>({
     }
 
     return (
-      <Text className={cn(middleElementClassnames, 'flex-1', 'p-2 truncate select-none')}>
+      <Text as="span" className={cn(middleElementClassnames, 'flex-1', 'p-2 truncate select-none')}>
         {content}
       </Text>
     );
