@@ -112,55 +112,80 @@ export function Explorer<TResultItem extends ResultItem>({
     isMenu && 'border-t-bruise border-l-bruise border-r-bruise',
   );
 
+  const renderStartItem = () => {
+    if (canSearch) {
+      return (
+        <InlineButton
+          className={startButtonClassnames}
+          icon={searchIcon}
+          onPress={() => dispatch({ type: 'toggleSearching' })}
+        />
+      );
+    }
+
+    return cloneElement(start as ReactElement, { className: startButtonClassnames });
+  };
+
+  const renderMiddleItem = () => {
+    if (isSearching) {
+      return (
+        <input
+          {...getInputProps()}
+          className={cn(
+            middleElementClassnames,
+            'p-2 leading-normal',
+            'overflow-hidden',
+            'bg-transparent placeholder-concrete',
+            'outline-none',
+          )}
+          autoFocus
+        />
+      );
+    }
+
+    if (canSearch) {
+      return (
+        <InlineButton
+          onPress={() => dispatch({ type: 'toggleSearching' })}
+          className={cn(middleElementClassnames, 'flex-1 min-w-0')}
+          isDisabled={!canSearch}
+        >
+          {content}
+        </InlineButton>
+      );
+    }
+
+    return (
+      <Text className={cn(middleElementClassnames, 'flex-1', 'p-2 truncate select-none')}>
+        {content}
+      </Text>
+    );
+  };
+
+  const renderEndItem = () => {
+    return (
+      <InlineButton
+        {...mergeProps(isSearching ? { onPress: reset } : {}, {
+          onPress: () =>
+            isSearching ? dispatch({ type: 'toggleSearching' }) : dispatch({ type: 'toggleMenu' }),
+        })}
+        className={endButtonClassnames}
+        icon={isMenu || isSearching ? closeIcon : menuIcon}
+      />
+    );
+  };
+
   return (
     <div className={cn(className, 'relative bg-gesso', 'flex flex-col min-w-0')}>
       <div
         className={cn('relative', 'flex flex-row items-stretch min-w-0')}
         {...getComboboxProps()}
       >
-        {canSearch ? (
-          <InlineButton
-            className={startButtonClassnames}
-            icon={searchIcon}
-            onPress={() => dispatch({ type: 'toggleSearching' })}
-          />
-        ) : (
-          cloneElement(start as ReactElement, { className: startButtonClassnames })
-        )}
-        {isSearching ? (
-          <input
-            {...getInputProps()}
-            className={cn(
-              middleElementClassnames,
-              'p-2 leading-normal',
-              'overflow-hidden',
-              'bg-transparent placeholder-concrete',
-              'outline-none',
-            )}
-            autoFocus
-          />
-        ) : canSearch ? (
-          <InlineButton
-            onPress={() => dispatch({ type: 'toggleSearching' })}
-            className={cn(middleElementClassnames, 'flex-1 min-w-0')}
-            isDisabled={!canSearch}
-          >
-            {content}
-          </InlineButton>
-        ) : (
-          <Text className={cn('flex-1', 'p-2 truncate select-none')}>{content}</Text>
-        )}
-        <InlineButton
-          {...mergeProps(isSearching ? { onPress: reset } : {}, {
-            onPress: () =>
-              isSearching
-                ? dispatch({ type: 'toggleSearching' })
-                : dispatch({ type: 'toggleMenu' }),
-          })}
-          className={endButtonClassnames}
-          icon={isMenu || isSearching ? closeIcon : menuIcon}
-        />
+        {renderStartItem()}
+        {renderMiddleItem()}
+        {renderEndItem()}
         <div
+          key="menu"
           className={cn(
             !isPopover && 'hidden',
             'absolute top-full left-0 right-0 z-10',
