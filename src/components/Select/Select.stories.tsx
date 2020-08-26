@@ -21,7 +21,7 @@ export const Simple = () => {
   const [value, setValue] = useState(null);
 
   return (
-    <Select items={ITEMS} renderItem={(item) => item.value}>
+    <Select items={ITEMS} renderItem={({ item }) => item.value}>
       Test Value
     </Select>
   );

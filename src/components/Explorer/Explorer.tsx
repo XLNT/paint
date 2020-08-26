@@ -1,18 +1,13 @@
-import React, { PropsWithChildren, ReactNode, useReducer, useRef } from 'react';
+import React, { PropsWithChildren, ReactNode, useReducer } from 'react';
 import { cn } from '../../utils/cn';
 import { WithClassName } from '../../utils/WithClassName';
 import { InlineButton } from '../InlineButton/InlineButton';
-import { Item } from '@react-stately/collections';
-import { useSearchFieldState } from '@react-stately/searchfield';
-import { useSearchField } from '@react-aria/searchfield';
-import { AriaSearchFieldProps } from '@react-types/searchfield';
-import { ListBox } from '../ListBox/ListBox';
 import { Text } from '../Text/Text';
-
+import { mergeProps } from '@react-aria/utils';
 import { ReactComponent as SearchIcon } from '../../icons/search.svg';
 import { ReactComponent as MenuIcon } from '../../icons/menu.svg';
 import { ReactComponent as CloseIcon } from '../../icons/close.svg';
-import { mergeProps } from '@react-aria/utils';
+import { useCombobox } from 'downshift';
 
 interface ResultItem {
   key: string;
@@ -26,8 +21,10 @@ interface ExplorerProps<TResultItem extends ResultItem>
   searching?: boolean;
   placeholder?: ReactNode;
   loading?: ReactNode;
-  results?: TResultItem[];
-  renderResultItem?: (result: TResultItem) => ReactNode;
+  items?: TResultItem[];
+  renderResultItem?: (state: { item: TResultItem; active: boolean }) => ReactNode;
+  itemToString?: (item: TResultItem | null) => string;
+  onSelectItem?: (item: TResultItem | null | undefined) => void;
 
   menu?: ReactNode;
   start?: ReactNode;
@@ -66,8 +63,10 @@ export function Explorer<TResultItem extends ResultItem>({
   searching,
   placeholder,
   loading,
-  results,
-  renderResultItem: renderResult,
+  items,
+  renderResultItem,
+  itemToString,
+  onSelectItem,
   content,
   start,
   menu,
@@ -77,23 +76,27 @@ export function Explorer<TResultItem extends ResultItem>({
 
   const [{ isSearching, isMenu }, dispatch] = useReducer(reducer, INITIAL_STATE);
   const isPopover = isSearching || isMenu;
-  const searchProps: AriaSearchFieldProps = {
-    value: search,
-    onChange: setSearch,
-    'aria-label': 'Search',
-    'aria-autocomplete': 'list',
-    'aria-haspopup': 'listbox',
-    excludeFromTabOrder: true,
-    placeholder: 'Aa',
-    autoFocus: true,
-  };
-  const state = useSearchFieldState(searchProps);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const { inputProps, clearButtonProps } = useSearchField(searchProps, state, inputRef as any);
+  const {
+    getMenuProps,
+    getInputProps,
+    getComboboxProps,
+    highlightedIndex,
+    getItemProps,
+    reset,
+  } = useCombobox({
+    items: items ?? [],
+    inputValue: search,
+    itemToString,
+    onInputValueChange: ({ inputValue }) => setSearch?.(inputValue ?? ''),
+    onSelectedItemChange: ({ selectedItem }) => onSelectItem?.(selectedItem),
+  });
 
   return (
     <div className={cn(className, 'relative bg-gesso', 'flex flex-col min-w-0')}>
-      <div className={cn('relative', 'flex flex-row items-stretch min-w-0')}>
+      <div
+        className={cn('relative', 'flex flex-row items-stretch min-w-0')}
+        {...getComboboxProps()}
+      >
         {canSearch ? (
           <InlineButton
             className={cn(
@@ -109,8 +112,7 @@ export function Explorer<TResultItem extends ResultItem>({
         )}
         {isSearching ? (
           <input
-            ref={inputRef}
-            {...inputProps}
+            {...getInputProps()}
             className={cn(
               'p-2 leading-normal',
               'overflow-hidden',
@@ -137,7 +139,7 @@ export function Explorer<TResultItem extends ResultItem>({
           <Text className={cn('flex-1', 'p-2 truncate')}>{content}</Text>
         )}
         <InlineButton
-          {...mergeProps(isSearching ? clearButtonProps : {}, {
+          {...mergeProps(isSearching ? { onPress: reset } : {}, {
             onPress: () =>
               isSearching
                 ? dispatch({ type: 'toggleSearching' })
@@ -150,28 +152,27 @@ export function Explorer<TResultItem extends ResultItem>({
           )}
           icon={isMenu || isSearching ? <CloseIcon /> : <MenuIcon />}
         />
-        {isPopover && (
-          <div
-            className={cn(
-              'absolute top-full left-0 right-0 z-10',
-              'bg-gesso',
-              'border-l border-r border-b border-bruise',
-            )}
-          >
-            {isMenu && menu}
-            {isSearching && (
-              <>
-                {!searching && (!results || results.length === 0) && placeholder}
-                {results && results.length > 0 && (
-                  <ListBox items={results} selectionMode="single" shouldFocusWrap>
-                    {(item) => <Item key={item.key}>{renderResult?.(item)}</Item>}
-                  </ListBox>
-                )}
-                {searching && loading}
-              </>
-            )}
-          </div>
-        )}
+        <div
+          className={cn(
+            !isPopover && 'hidden',
+            'absolute top-full left-0 right-0 z-10',
+            'bg-gesso',
+            'border-l border-r border-b border-bruise',
+          )}
+        >
+          {isMenu && menu}
+          <ul className={cn(!isSearching && 'hidden')} {...getMenuProps()}>
+            {!searching && (!items || items.length === 0) && placeholder}
+            {items &&
+              items.length > 0 &&
+              items.map((item, index) => (
+                <li key={item.key} {...getItemProps({ item, index })}>
+                  {renderResultItem?.({ item, active: highlightedIndex === index })}
+                </li>
+              ))}
+            {searching && loading}
+          </ul>
+        </div>
       </div>
       {children && <div className={cn('flex flex-row')}>{children}</div>}
     </div>

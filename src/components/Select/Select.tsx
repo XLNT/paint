@@ -13,7 +13,7 @@ export interface SelectItem {
 
 interface SelectProps<TSelectItem> extends PropsWithChildren<{}>, WithClassName {
   items: TSelectItem[];
-  renderItem: (item: TSelectItem) => ReactNode;
+  renderItem: (state: { item: TSelectItem; selected?: boolean; active?: boolean }) => ReactNode;
 }
 
 const itemToString = (item: SelectItem | null) => item?.value ?? '';
@@ -57,7 +57,7 @@ export function Select<TSelectItem extends SelectItem>({
           )
         }
       >
-        {selectedItem ? renderItem(selectedItem) : children}
+        {selectedItem ? renderItem({ item: selectedItem }) : children}
       </InlineButton>
       <ul
         className={cn(
@@ -74,15 +74,17 @@ export function Select<TSelectItem extends SelectItem>({
         {isOpen &&
           items.map((item, index) => (
             <li
-              className={cn(highlightedIndex === index && 'bg-smudge', 'p-2')}
               key={item.value}
               {...getItemProps({
                 item,
                 index,
-                isSelected: selectedItem === item,
               })}
             >
-              {renderItem(item)}
+              {renderItem({
+                item,
+                selected: selectedItem === item,
+                active: highlightedIndex === index,
+              })}
             </li>
           ))}
       </ul>

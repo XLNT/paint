@@ -17,8 +17,6 @@ const ITEMS: SelectItem[] = new Array(100).fill(0).map((_, i) => ({
   value: i.toString(),
 }));
 
-console.log(ITEMS);
-
 const backLink = <InlineButton elementType="a" href="https://google.com" icon={<BackIcon />} />;
 const menu = (
   <div className={cn('flex flex-col justify-center items-center p-4 space-y-4')}>
@@ -64,11 +62,18 @@ export const EventExplorer = () => {
       searching={search.length === 1 || search.length > 2}
       placeholder={<Text className={cn('p-2 text-center')}>Placeholder text...</Text>}
       loading={<Text className={cn('p-2 text-center')}>Loading state...</Text>}
-      results={search.length > 1 ? SEARCH_RESULTS : undefined}
-      renderResultItem={(item) => (
+      items={search.length > 1 ? SEARCH_RESULTS : undefined}
+      itemToString={(item) => item?.title ?? ''}
+      onSelectItem={(item) => item && alert(item?.title)}
+      renderResultItem={({ item, active }) => (
         <a href="https://google.com">
           <div
-            className={cn('flex flex-row justify-between items-center', 'p-2', 'hover:bg-smudge')}
+            className={cn(
+              'flex flex-row justify-between items-center',
+              'p-2',
+              active && 'bg-smudge',
+              'hover:bg-smudge',
+            )}
           >
             <Text className={cn('flex-1 truncate')}>{item.title}</Text>
             <Text>{item.type}</Text>
@@ -78,10 +83,10 @@ export const EventExplorer = () => {
       menu={menu}
     >
       <InlineButtonGroup className={cn('w-64')}>
-        <Select className={cn('flex-1')} items={ITEMS} renderItem={(item) => item.value}>
+        <Select className={cn('flex-1')} items={ITEMS} renderItem={({ item }) => item.value}>
           Medium
         </Select>
-        <Select className={cn('flex-1')} items={ITEMS} renderItem={(item) => item.value}>
+        <Select className={cn('flex-1')} items={ITEMS} renderItem={({ item }) => item.value}>
           Geography
         </Select>
       </InlineButtonGroup>
