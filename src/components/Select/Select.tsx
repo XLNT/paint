@@ -1,11 +1,8 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React, { PropsWithChildren, ReactNode, ReactElement, cloneElement } from 'react';
 import { WithClassName } from '../../utils/WithClassName';
 import { InlineButton } from '../InlineButton/InlineButton';
 import { cn } from '../../utils/cn';
 import { useSelect } from 'downshift';
-import { ReactComponent as ExpandIcon } from '../../icons/nav down.svg';
-import { ReactComponent as CollapseIcon } from '../../icons/nav up.svg';
-import { ReactComponent as CancelIcon } from '../../icons/close.svg';
 
 export interface SelectItem {
   value: string;
@@ -14,6 +11,10 @@ export interface SelectItem {
 interface SelectProps<TSelectItem> extends PropsWithChildren<{}>, WithClassName {
   items: TSelectItem[];
   renderItem: (state: { item: TSelectItem; selected?: boolean; active?: boolean }) => ReactNode;
+
+  expandIcon: ReactElement;
+  collapseIcon: ReactElement;
+  cancelIcon: ReactElement;
 }
 
 const itemToString = (item: SelectItem | null) => item?.value ?? '';
@@ -23,6 +24,9 @@ export function Select<TSelectItem extends SelectItem>({
   renderItem,
   className,
   children,
+  expandIcon,
+  collapseIcon,
+  cancelIcon,
 }: SelectProps<TSelectItem>) {
   const {
     isOpen,
@@ -42,19 +46,17 @@ export function Select<TSelectItem extends SelectItem>({
         {...getLabelProps()}
         {...getToggleButtonProps()}
         icon={
-          isOpen ? (
-            <CollapseIcon />
-          ) : selectedItem ? (
-            // TODO: a11y clear button
-            <CancelIcon
-              onClick={(e) => {
-                e.stopPropagation();
-                reset();
-              }}
-            />
-          ) : (
-            <ExpandIcon />
-          )
+          isOpen
+            ? collapseIcon
+            : selectedItem
+            ? // TODO: a11y clear button
+              cloneElement(cancelIcon, {
+                onClick: (e: any) => {
+                  e.stopPropagation();
+                  reset();
+                },
+              })
+            : expandIcon
         }
       >
         {selectedItem ? renderItem({ item: selectedItem }) : children}

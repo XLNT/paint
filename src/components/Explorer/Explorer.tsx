@@ -1,12 +1,9 @@
-import React, { PropsWithChildren, ReactNode, useReducer } from 'react';
+import React, { PropsWithChildren, ReactNode, useReducer, ReactElement } from 'react';
 import { cn } from '../../utils/cn';
 import { WithClassName } from '../../utils/WithClassName';
 import { InlineButton } from '../InlineButton/InlineButton';
 import { Text } from '../Text/Text';
 import { mergeProps } from '@react-aria/utils';
-import { ReactComponent as SearchIcon } from '../../icons/search.svg';
-import { ReactComponent as MenuIcon } from '../../icons/menu.svg';
-import { ReactComponent as CloseIcon } from '../../icons/close.svg';
 import { useCombobox } from 'downshift';
 
 interface ResultItem {
@@ -30,6 +27,10 @@ interface ExplorerProps<TResultItem extends ResultItem>
   start?: ReactNode;
   end?: ReactNode;
   content?: ReactNode;
+
+  searchIcon: ReactElement;
+  menuIcon: ReactElement;
+  closeIcon: ReactElement;
 }
 
 interface State {
@@ -67,9 +68,14 @@ export function Explorer<TResultItem extends ResultItem>({
   renderResultItem,
   itemToString,
   onSelectItem,
+  //
   content,
   start,
   menu,
+  //
+  searchIcon,
+  menuIcon,
+  closeIcon,
 }: ExplorerProps<TResultItem>) {
   // searching can only happen at the top level, where there is no back button
   const canSearch = !!setSearch;
@@ -104,7 +110,7 @@ export function Explorer<TResultItem extends ResultItem>({
               isMenu && 'border-b-bruise',
               isSearching && 'border-t-bruise border-l-bruise border-r-bruise',
             )}
-            icon={<SearchIcon />}
+            icon={searchIcon}
             onPress={() => dispatch({ type: 'toggleSearching' })}
           />
         ) : (
@@ -150,7 +156,7 @@ export function Explorer<TResultItem extends ResultItem>({
             isSearching && 'border-b-bruise',
             isMenu && 'border-t-bruise border-l-bruise border-r-bruise',
           )}
-          icon={isMenu || isSearching ? <CloseIcon /> : <MenuIcon />}
+          icon={isMenu || isSearching ? closeIcon : menuIcon}
         />
         <div
           className={cn(

@@ -8,6 +8,13 @@ import { Text } from '../Text/Text';
 import { Button } from '../Button/Button';
 import { ReactComponent as BackIcon } from '../../icons/nav left.svg';
 import { Select, SelectItem } from '../Select/Select';
+import { ReactComponent as SearchIcon } from '../../icons/search.svg';
+import { ReactComponent as MenuIcon } from '../../icons/menu.svg';
+import { ReactComponent as CloseIcon } from '../../icons/close.svg';
+
+import { ReactComponent as ExpandIcon } from '../../icons/nav down.svg';
+import { ReactComponent as CollapseIcon } from '../../icons/nav up.svg';
+import { ReactComponent as CancelIcon } from '../../icons/close.svg';
 
 export default {
   title: 'Explorer',
@@ -33,10 +40,24 @@ const SEARCH_RESULTS = [
   { key: 'd', title: 'Resource title', type: 'Work' },
 ];
 
-export const Empty = () => <Explorer className={cn('w-64')} />;
+export const Empty = () => (
+  <Explorer
+    className={cn('w-64')}
+    searchIcon={<SearchIcon />}
+    menuIcon={<MenuIcon />}
+    closeIcon={<CloseIcon />}
+  />
+);
 
 export const EmptyWithActions = () => (
-  <Explorer className={cn('w-64')} content={<Skeleton className={cn('w-full h-6')} />} menu={menu}>
+  <Explorer
+    className={cn('w-64')}
+    content={<Skeleton className={cn('w-full h-6')} />}
+    menu={menu}
+    searchIcon={<SearchIcon />}
+    menuIcon={<MenuIcon />}
+    closeIcon={<CloseIcon />}
+  >
     <InlineButtonGroup className={cn('w-64')}>
       <InlineButton className={cn('flex-1')} isDisabled>
         <Skeleton className={cn('w-full h-6')} />
@@ -81,12 +102,29 @@ export const EventExplorer = () => {
         </a>
       )}
       menu={menu}
+      searchIcon={<SearchIcon />}
+      menuIcon={<MenuIcon />}
+      closeIcon={<CloseIcon />}
     >
       <InlineButtonGroup className={cn('w-64')}>
-        <Select className={cn('flex-1')} items={ITEMS} renderItem={({ item }) => item.value}>
+        <Select
+          className={cn('flex-1')}
+          items={ITEMS}
+          renderItem={({ item }) => item.value}
+          expandIcon={<ExpandIcon />}
+          collapseIcon={<CollapseIcon />}
+          cancelIcon={<CancelIcon />}
+        >
           Medium
         </Select>
-        <Select className={cn('flex-1')} items={ITEMS} renderItem={({ item }) => item.value}>
+        <Select
+          className={cn('flex-1')}
+          items={ITEMS}
+          renderItem={({ item }) => item.value}
+          expandIcon={<ExpandIcon />}
+          collapseIcon={<CollapseIcon />}
+          cancelIcon={<CancelIcon />}
+        >
           Geography
         </Select>
       </InlineButtonGroup>
@@ -95,7 +133,15 @@ export const EventExplorer = () => {
 };
 
 export const SpaceExplorer = () => (
-  <Explorer className={cn('w-64')} start={backLink} content="Space name" menu={menu} />
+  <Explorer
+    className={cn('w-64')}
+    start={backLink}
+    content="Space name"
+    menu={menu}
+    searchIcon={<SearchIcon />}
+    menuIcon={<MenuIcon />}
+    closeIcon={<CloseIcon />}
+  />
 );
 
 export const WorkExplorer = () => (
@@ -104,5 +150,8 @@ export const WorkExplorer = () => (
     start={backLink}
     content={<span className={cn('italic')}>Work title</span>}
     menu={menu}
+    searchIcon={<SearchIcon />}
+    menuIcon={<MenuIcon />}
+    closeIcon={<CloseIcon />}
   />
 );
