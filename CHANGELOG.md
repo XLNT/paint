@@ -1,3 +1,15 @@
+# v0.19.1 (Wed Aug 26 2020)
+
+#### 🐛 Bug Fix
+
+- fix: add styling back to select dropdown ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.19.0 (Wed Aug 26 2020)
 
 #### 🚀 Enhancement
