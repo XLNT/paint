@@ -1,3 +1,15 @@
+# v0.20.1 (Thu Aug 27 2020)
+
+#### 🐛 Bug Fix
+
+- fix: correctly flex input ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.20.0 (Thu Aug 27 2020)
 
 #### 🚀 Enhancement
