@@ -1,3 +1,15 @@
+# v0.20.0 (Thu Aug 27 2020)
+
+#### 🚀 Enhancement
+
+- feat: keyaccessor prop for items to fix types ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.19.5 (Thu Aug 27 2020)
 
 #### 🐛 Bug Fix
