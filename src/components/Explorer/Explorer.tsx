@@ -123,7 +123,7 @@ export function Explorer<TResultItem extends ResultItem>({
       );
     }
 
-    return cloneElement(start as ReactElement, { className: startButtonClassnames });
+    return start && cloneElement(start as ReactElement, { className: startButtonClassnames });
   };
 
   const renderMiddleItem = () => {
@@ -176,7 +176,7 @@ export function Explorer<TResultItem extends ResultItem>({
   };
 
   return (
-    <div className={cn(className, 'relative bg-gesso', 'flex flex-col min-w-0')}>
+    <div className={cn(className, 'bg-gesso', 'flex flex-col min-w-0')}>
       <div
         className={cn('relative', 'flex flex-row items-stretch min-w-0')}
         {...getComboboxProps()}
