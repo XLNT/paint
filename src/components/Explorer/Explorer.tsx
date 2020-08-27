@@ -99,6 +99,7 @@ export function Explorer<TItem>({
     isSearching && 'border-t-bruise border-l-bruise border-r-bruise',
   );
   const middleElementClassnames = cn(
+    'flex-1 min-w-0',
     'border-b',
     isPopover ? 'border-bruise' : 'border-transparent',
   );
@@ -143,7 +144,7 @@ export function Explorer<TItem>({
       return (
         <InlineButton
           onPress={() => dispatch({ type: 'toggleSearching' })}
-          className={cn(middleElementClassnames, 'flex-1 min-w-0')}
+          className={cn(middleElementClassnames)}
           isDisabled={!canSearch}
         >
           {content}
