@@ -1,3 +1,15 @@
+# v0.19.5 (Thu Aug 27 2020)
+
+#### 🐛 Bug Fix
+
+- fix: allow explorer to be absolutely and fixed positioned ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.19.4 (Wed Aug 26 2020)
 
 #### 🐛 Bug Fix
