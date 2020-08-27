@@ -80,10 +80,11 @@ export const EventExplorer = () => {
       search={search}
       setSearch={setSearch}
       content="Ars Electronica + .art Domains Curated"
-      searching={search.length === 1 || search.length > 2}
+      searching={search.length === 1 || search.length === 2}
       placeholder={<Text className={cn('p-2 text-center')}>Placeholder text...</Text>}
       loading={<Text className={cn('p-2 text-center')}>Loading state...</Text>}
-      items={search.length > 1 ? SEARCH_RESULTS : undefined}
+      notFound={<Text className={cn('p-2 text-center')}>Not found state...</Text>}
+      items={search.length > 1 && search.length < 5 ? SEARCH_RESULTS : undefined}
       itemToKey={(item) => item?.key}
       itemToString={(item) => item?.title ?? ''}
       onSelectItem={(item) => item && alert(item?.title)}

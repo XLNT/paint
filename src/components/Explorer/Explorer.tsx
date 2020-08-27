@@ -12,6 +12,7 @@ interface ExplorerProps<TItem> extends WithClassName, PropsWithChildren<{}> {
   searching?: boolean;
   placeholder?: ReactNode;
   loading?: ReactNode;
+  notFound?: ReactNode;
   items?: TItem[];
   renderResultItem?: (state: { item: TItem; active: boolean }) => ReactNode;
   itemToKey?: (item: TItem) => string;
@@ -59,6 +60,7 @@ export function Explorer<TItem>({
   searching,
   placeholder,
   loading,
+  notFound,
   items,
   renderResultItem,
   itemToKey,
@@ -75,6 +77,8 @@ export function Explorer<TItem>({
 }: ExplorerProps<TItem>) {
   // searching can only happen at the top level, where there is no back button
   const canSearch = !!setSearch;
+  const noItems = !items || items.length === 0;
+  const hasSearchText = search && search.length > 0;
 
   const [{ isSearching, isMenu }, dispatch] = useReducer(reducer, INITIAL_STATE);
   const isPopover = isSearching || isMenu;
@@ -192,7 +196,8 @@ export function Explorer<TItem>({
         >
           {isMenu && menu}
           <ul className={cn(!isSearching && 'hidden')} {...getMenuProps()}>
-            {!searching && (!items || items.length === 0) && placeholder}
+            {!searching && noItems && hasSearchText && notFound}
+            {!searching && noItems && !hasSearchText && placeholder}
             {items &&
               items.length > 0 &&
               items.map((item, index) => (
