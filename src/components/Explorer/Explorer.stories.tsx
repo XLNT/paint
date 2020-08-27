@@ -84,6 +84,7 @@ export const EventExplorer = () => {
       placeholder={<Text className={cn('p-2 text-center')}>Placeholder text...</Text>}
       loading={<Text className={cn('p-2 text-center')}>Loading state...</Text>}
       items={search.length > 1 ? SEARCH_RESULTS : undefined}
+      itemToKey={(item) => item?.key}
       itemToString={(item) => item?.title ?? ''}
       onSelectItem={(item) => item && alert(item?.title)}
       renderResultItem={({ item, active }) => (

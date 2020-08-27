@@ -6,22 +6,17 @@ import { Text } from '../Text/Text';
 import { mergeProps } from '@react-aria/utils';
 import { useCombobox } from 'downshift';
 
-interface ResultItem {
-  key: string;
-}
-
-interface ExplorerProps<TResultItem extends ResultItem>
-  extends WithClassName,
-    PropsWithChildren<{}> {
+interface ExplorerProps<TItem> extends WithClassName, PropsWithChildren<{}> {
   search?: string;
   setSearch?: (search: string) => void;
   searching?: boolean;
   placeholder?: ReactNode;
   loading?: ReactNode;
-  items?: TResultItem[];
-  renderResultItem?: (state: { item: TResultItem; active: boolean }) => ReactNode;
-  itemToString?: (item: TResultItem | null) => string;
-  onSelectItem?: (item: TResultItem | null | undefined) => void;
+  items?: TItem[];
+  renderResultItem?: (state: { item: TItem; active: boolean }) => ReactNode;
+  itemToKey?: (item: TItem) => string;
+  itemToString?: (item: TItem | null) => string;
+  onSelectItem?: (item: TItem | null | undefined) => void;
 
   menu?: ReactElement;
   start?: ReactElement;
@@ -56,7 +51,7 @@ function reducer(state: State, action: Action) {
 
 const INITIAL_STATE: State = { isSearching: false, isMenu: false };
 
-export function Explorer<TResultItem extends ResultItem>({
+export function Explorer<TItem>({
   children,
   className,
   search,
@@ -66,6 +61,7 @@ export function Explorer<TResultItem extends ResultItem>({
   loading,
   items,
   renderResultItem,
+  itemToKey,
   itemToString,
   onSelectItem,
   //
@@ -76,7 +72,7 @@ export function Explorer<TResultItem extends ResultItem>({
   searchIcon,
   menuIcon,
   closeIcon,
-}: ExplorerProps<TResultItem>) {
+}: ExplorerProps<TItem>) {
   // searching can only happen at the top level, where there is no back button
   const canSearch = !!setSearch;
 
@@ -199,7 +195,7 @@ export function Explorer<TResultItem extends ResultItem>({
             {items &&
               items.length > 0 &&
               items.map((item, index) => (
-                <li key={item.key} {...getItemProps({ item, index })}>
+                <li key={itemToKey?.(item)} {...getItemProps({ item, index })}>
                   {renderResultItem?.({ item, active: highlightedIndex === index })}
                 </li>
               ))}
