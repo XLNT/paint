@@ -131,13 +131,13 @@ export function Explorer<TItem>({
     if (isSearching) {
       return (
         <input
-          {...getInputProps()}
+          {...getInputProps({}, { suppressRefError: true })}
           className={cn(
             middleElementClassnames,
             'p-2 leading-normal',
             'overflow-hidden',
             'bg-transparent placeholder-concrete',
-            'outline-none',
+            'outline-none appearance-none',
           )}
           autoFocus
         />
