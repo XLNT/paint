@@ -1,3 +1,15 @@
+# v0.21.2 (Fri Aug 28 2020)
+
+#### 🐛 Bug Fix
+
+- fix: styling for explorer input ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.21.1 (Fri Aug 28 2020)
 
 #### 🐛 Bug Fix
