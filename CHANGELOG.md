@@ -1,3 +1,16 @@
+# v0.21.3 (Fri Aug 28 2020)
+
+#### 🐛 Bug Fix
+
+- fix: attempt to solve downshift ref issue ([@shrugs](https://github.com/shrugs))
+- fix: stable id generation for downshift component ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.21.2 (Fri Aug 28 2020)
 
 #### 🐛 Bug Fix
