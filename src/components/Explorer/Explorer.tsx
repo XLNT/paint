@@ -132,38 +132,50 @@ export function Explorer<TItem>({
   };
 
   const renderMiddleItem = () => {
+    const input = (
+      <input
+        {...getInputProps({}, { suppressRefError: true })}
+        className={cn(
+          middleElementClassnames,
+          !isSearching && 'hidden',
+          'p-2 leading-normal',
+          'overflow-hidden',
+          'bg-transparent placeholder-concrete',
+          'outline-none appearance-none',
+        )}
+        autoFocus
+      />
+    );
+
     if (isSearching) {
-      return (
-        <input
-          {...getInputProps({}, { suppressRefError: true })}
-          className={cn(
-            middleElementClassnames,
-            'p-2 leading-normal',
-            'overflow-hidden',
-            'bg-transparent placeholder-concrete',
-            'outline-none appearance-none',
-          )}
-          autoFocus
-        />
-      );
+      return input;
     }
 
     if (canSearch) {
       return (
-        <InlineButton
-          onPress={() => dispatch({ type: 'toggleSearching' })}
-          className={cn(middleElementClassnames)}
-          isDisabled={!canSearch}
-        >
-          {content}
-        </InlineButton>
+        <>
+          {input}
+          <InlineButton
+            onPress={() => dispatch({ type: 'toggleSearching' })}
+            className={cn(middleElementClassnames)}
+            isDisabled={!canSearch}
+          >
+            {content}
+          </InlineButton>
+        </>
       );
     }
 
     return (
-      <Text as="span" className={cn(middleElementClassnames, 'flex-1', 'p-2 truncate select-none')}>
-        {content}
-      </Text>
+      <>
+        {input}
+        <Text
+          as="span"
+          className={cn(middleElementClassnames, 'flex-1', 'p-2 truncate select-none')}
+        >
+          {content}
+        </Text>
+      </>
     );
   };
 
