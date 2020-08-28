@@ -90,6 +90,10 @@ export function Explorer<TItem>({
     getItemProps,
     reset,
   } = useCombobox({
+    id: 'explorer',
+    labelId: 'explorer-label',
+    inputId: 'explorer-input',
+    menuId: 'explorer-menu',
     items: items ?? [],
     inputValue: search,
     itemToString,
