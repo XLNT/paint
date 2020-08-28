@@ -195,17 +195,19 @@ export function Explorer<TItem>({
           )}
         >
           {isMenu && menu}
+          {/* apparently this ul needs to always be in the dom for a11y reasons? */}
           <ul className={cn(!isSearching && 'hidden')} {...getMenuProps()}>
-            {!searching && noItems && hasSearchText && notFound}
-            {!searching && noItems && !hasSearchText && placeholder}
-            {items &&
+            {isSearching && !searching && noItems && hasSearchText && notFound}
+            {isSearching && !searching && noItems && !hasSearchText && placeholder}
+            {isSearching &&
+              items &&
               items.length > 0 &&
               items.map((item, index) => (
                 <li key={itemToKey?.(item)} {...getItemProps({ item, index })}>
                   {renderResultItem?.({ item, active: highlightedIndex === index })}
                 </li>
               ))}
-            {searching && loading}
+            {isSearching && searching && loading}
           </ul>
         </div>
       </div>
