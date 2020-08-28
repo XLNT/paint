@@ -1,3 +1,15 @@
+# v0.21.1 (Fri Aug 28 2020)
+
+#### 🐛 Bug Fix
+
+- fix: correct mounting logic for explorer popup ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.21.0 (Thu Aug 27 2020)
 
 #### 🚀 Enhancement
