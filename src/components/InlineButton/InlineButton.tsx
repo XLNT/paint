@@ -45,7 +45,40 @@ const inlineButtonStyles = ({
     hovered || pressed || focused ? 'bg-drywall' : 'bg-gesso',
   );
 
-export const InlineButton = forwardRef<HTMLElement, InlineButtonProps>(function Button(
+export const SimpleInlineButton = forwardRef<HTMLElement, InlineButtonProps>(
+  function SimpleInlineButton(props, outerRef) {
+    const innerRef = useRef<HTMLElement>(null);
+    const ref = mergeRefs([outerRef, innerRef]);
+    const { elementType: ElementType = 'button', isDisabled, children, icon } = props;
+
+    const { hoverProps, isHovered } = useHover(props);
+    const [isFocused, setIsFocused] = useState(false);
+    const { focusableProps } = useFocusable({ ...props, onFocusChange: setIsFocused }, ref);
+
+    return (
+      <ElementType
+        ref={ref}
+        {...mergeProps(hoverProps, focusableProps, filterComponentProps(props), {
+          className: inlineButtonStyles({
+            disabled: isDisabled,
+            pressed: false,
+            focused: isFocused,
+            hovered: isHovered,
+          }),
+        })}
+      >
+        {children && (
+          <Text as="span" className={cn('flex-1', 'truncate')}>
+            {children}
+          </Text>
+        )}
+        {icon && cloneElement(icon, mergeProps(icon.props, { className: cn('flex-none') }))}
+      </ElementType>
+    );
+  },
+);
+
+export const InlineButton = forwardRef<HTMLElement, InlineButtonProps>(function InlineButton(
   props,
   outerRef,
 ) {

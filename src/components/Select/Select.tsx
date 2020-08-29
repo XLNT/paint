@@ -1,15 +1,14 @@
 import React, { PropsWithChildren, ReactNode, ReactElement, cloneElement } from 'react';
 import { WithClassName } from '../../utils/WithClassName';
-import { InlineButton } from '../InlineButton/InlineButton';
+import { SimpleInlineButton } from '../InlineButton/InlineButton';
 import { cn } from '../../utils/cn';
 import { useSelect } from 'downshift';
 
-export interface SelectItem {
-  value: string;
-}
-
 interface SelectProps<TSelectItem> extends PropsWithChildren<{}>, WithClassName {
   items: TSelectItem[];
+  selectedItem: TSelectItem | undefined | null;
+  onSelectItem: (item: TSelectItem | null) => void;
+  itemToKey: (item: TSelectItem) => string;
   renderItem: (state: { item: TSelectItem; selected?: boolean; active?: boolean }) => ReactNode;
 
   expandIcon: ReactElement;
@@ -17,10 +16,11 @@ interface SelectProps<TSelectItem> extends PropsWithChildren<{}>, WithClassName 
   cancelIcon: ReactElement;
 }
 
-const itemToString = (item: SelectItem | null) => item?.value ?? '';
-
-export function Select<TSelectItem extends SelectItem>({
+export function Select<TSelectItem>({
   items,
+  selectedItem,
+  onSelectItem,
+  itemToKey,
   renderItem,
   className,
   children,
@@ -30,20 +30,21 @@ export function Select<TSelectItem extends SelectItem>({
 }: SelectProps<TSelectItem>) {
   const {
     isOpen,
-    selectedItem,
     getToggleButtonProps,
-    getLabelProps,
     getMenuProps,
     highlightedIndex,
     getItemProps,
     reset,
-  } = useSelect({ items, itemToString, onSelectedItemChange: console.log.bind(console) });
+  } = useSelect({
+    items,
+    selectedItem,
+    onSelectedItemChange: ({ selectedItem }) => onSelectItem(selectedItem ?? null),
+  });
 
   return (
     <div className={cn(className, 'relative', 'flex flex-row')}>
-      <InlineButton
+      <SimpleInlineButton
         className={cn('flex-1')}
-        {...getLabelProps()}
         {...getToggleButtonProps()}
         icon={
           isOpen
@@ -60,7 +61,7 @@ export function Select<TSelectItem extends SelectItem>({
         }
       >
         {selectedItem ? renderItem({ item: selectedItem }) : children}
-      </InlineButton>
+      </SimpleInlineButton>
       <ul
         className={cn(
           !isOpen && 'hidden',
@@ -76,8 +77,13 @@ export function Select<TSelectItem extends SelectItem>({
         {isOpen &&
           items.map((item, index) => (
             <li
-              key={item.value}
-              className={cn('p-2', highlightedIndex === index && 'bg-smudge')}
+              key={itemToKey(item)}
+              className={cn(
+                // general item pading
+                'p-2',
+                // highlighted state
+                highlightedIndex === index && 'bg-smudge',
+              )}
               {...getItemProps({
                 item,
                 index,

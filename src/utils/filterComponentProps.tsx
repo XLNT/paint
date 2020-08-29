@@ -1,13 +1,16 @@
-import { ReactNode } from 'react';
+import { HTMLProps, PropsWithChildren } from 'react';
+import { WithClassName } from '..';
 
-interface AllowedComponentProps {
-  className?: string;
-  children?: ReactNode;
-}
+interface AllowedComponentProps
+  extends PropsWithChildren<{}>,
+    WithClassName,
+    Pick<HTMLProps<HTMLElement>, 'onKeyDown' | 'onClick'> {}
 
 export function filterComponentProps(props: Record<string, any>): AllowedComponentProps {
   return {
     className: props.className,
     children: props.children,
+    onKeyDown: props.onKeyDown,
+    onClick: props.onClick,
   };
 }

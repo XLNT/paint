@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
-import { Select, SelectItem } from './Select';
+import { Select } from './Select';
 import { ReactComponent as ExpandIcon } from '../../icons/nav down.svg';
 import { ReactComponent as CollapseIcon } from '../../icons/nav up.svg';
 import { ReactComponent as CancelIcon } from '../../icons/close.svg';
+import { cn } from '../../utils/cn';
 
 export default {
   title: 'Select',
 };
 
-const ITEMS: SelectItem[] = [
+interface Item {
+  value: string;
+  parent?: string;
+}
+
+const ITEMS: Item[] = [
   {
     value: 'a',
   },
@@ -18,15 +24,20 @@ const ITEMS: SelectItem[] = [
   {
     value: 'c',
   },
+  { value: 'd', parent: 'c' },
+  { value: 'e', parent: 'c' },
 ];
 
 export const Simple = () => {
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState<Item | null>(null);
 
   return (
     <Select
       items={ITEMS}
-      renderItem={({ item }) => item.value}
+      selectedItem={value}
+      onSelectItem={setValue}
+      itemToKey={(item) => item.value}
+      renderItem={({ item }) => <span className={cn(item.parent && 'pl-2')}>{item.value}</span>}
       expandIcon={<ExpandIcon />}
       collapseIcon={<CollapseIcon />}
       cancelIcon={<CancelIcon />}
