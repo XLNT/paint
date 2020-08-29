@@ -1,3 +1,15 @@
+# v0.22.1 (Sat Aug 29 2020)
+
+#### 🐛 Bug Fix
+
+- fix: select updates ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.22.0 (Sat Aug 29 2020)
 
 #### 🚀 Enhancement
