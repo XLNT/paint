@@ -7,7 +7,7 @@ import { Skeleton } from '../Skeleton/Skeleton';
 import { Text } from '../Text/Text';
 import { Button } from '../Button/Button';
 import { ReactComponent as BackIcon } from '../../icons/nav left.svg';
-import { Select, SelectItem } from '../Select/Select';
+import { Select } from '../Select/Select';
 import { ReactComponent as SearchIcon } from '../../icons/search.svg';
 import { ReactComponent as MenuIcon } from '../../icons/menu.svg';
 import { ReactComponent as CloseIcon } from '../../icons/close.svg';
@@ -20,6 +20,9 @@ export default {
   title: 'Explorer',
 };
 
+interface SelectItem {
+  value: string;
+}
 const ITEMS: SelectItem[] = new Array(100).fill(0).map((_, i) => ({
   value: i.toString(),
 }));
@@ -74,6 +77,8 @@ export const EmptyWithActions = () => (
 
 export const EventExplorer = () => {
   const [search, setSearch] = useState('');
+  const [medium, setMedium] = useState<SelectItem | null>(null);
+  const [geo, setGeo] = useState<SelectItem | null>(null);
   return (
     <Explorer
       className={cn('w-64')}
@@ -112,7 +117,10 @@ export const EventExplorer = () => {
         <Select
           className={cn('flex-1')}
           items={ITEMS}
+          selectedItem={medium}
+          onSelectItem={setMedium}
           renderItem={({ item }) => item.value}
+          itemToKey={(item) => item.value}
           expandIcon={<ExpandIcon />}
           collapseIcon={<CollapseIcon />}
           cancelIcon={<CancelIcon />}
@@ -122,6 +130,9 @@ export const EventExplorer = () => {
         <Select
           className={cn('flex-1')}
           items={ITEMS}
+          selectedItem={geo}
+          onSelectItem={setGeo}
+          itemToKey={(item) => item.value}
           renderItem={({ item }) => item.value}
           expandIcon={<ExpandIcon />}
           collapseIcon={<CollapseIcon />}
