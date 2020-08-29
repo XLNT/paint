@@ -22,7 +22,7 @@ const ITEMS: Item[] = [
     value: 'b',
   },
   {
-    value: 'c',
+    value: 'cccccccccccccccccccccc',
   },
   { value: 'd', parent: 'c' },
   { value: 'e', parent: 'c' },
@@ -33,11 +33,14 @@ export const Simple = () => {
 
   return (
     <Select
+      className={cn('w-24')}
       items={ITEMS}
       selectedItem={value}
       onSelectItem={setValue}
       itemToKey={(item) => item.value}
-      renderItem={({ item }) => <span className={cn(item.parent && 'pl-2')}>{item.value}</span>}
+      renderItem={({ item }) => (
+        <span className={cn('truncate', item.parent && 'pl-2')}>{item.value}</span>
+      )}
       expandIcon={<ExpandIcon />}
       collapseIcon={<CollapseIcon />}
       cancelIcon={<CancelIcon />}

@@ -68,7 +68,7 @@ export const SimpleInlineButton = forwardRef<HTMLElement, InlineButtonProps>(
         })}
       >
         {children && (
-          <Text as="span" className={cn('flex-1', 'truncate')}>
+          <Text as="span" className={cn('flex-1', 'flex flex-row min-w-0')}>
             {children}
           </Text>
         )}

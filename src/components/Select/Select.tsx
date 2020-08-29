@@ -9,7 +9,12 @@ interface SelectProps<TSelectItem> extends PropsWithChildren<{}>, WithClassName 
   selectedItem: TSelectItem | undefined | null;
   onSelectItem: (item: TSelectItem | null) => void;
   itemToKey: (item: TSelectItem) => string;
-  renderItem: (state: { item: TSelectItem; selected?: boolean; active?: boolean }) => ReactNode;
+  renderItem: (state: {
+    item: TSelectItem;
+    selected?: boolean;
+    active?: boolean;
+    label?: boolean;
+  }) => ReactNode;
 
   expandIcon: ReactElement;
   collapseIcon: ReactElement;
@@ -60,14 +65,18 @@ export function Select<TSelectItem>({
             : expandIcon
         }
       >
-        {selectedItem ? renderItem({ item: selectedItem }) : children}
+        {selectedItem ? (
+          renderItem({ item: selectedItem, label: true })
+        ) : (
+          <span className={cn('flex-1', 'truncate')}>{children}</span>
+        )}
       </SimpleInlineButton>
       <ul
         className={cn(
           !isOpen && 'hidden',
           'absolute top-full left-0 w-full',
           'border border-bruise bg-gesso',
-          'overflow-y-auto overscroll-contain',
+          'overflow-y-auto overflow-x-hidden overscroll-contain',
         )}
         style={{
           maxHeight: '16rem',
@@ -79,6 +88,7 @@ export function Select<TSelectItem>({
             <li
               key={itemToKey(item)}
               className={cn(
+                'flex flex-row min-w-0',
                 // general item pading
                 'p-2',
                 // highlighted state
