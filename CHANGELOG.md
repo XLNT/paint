@@ -1,3 +1,19 @@
+# v0.22.0 (Sat Aug 29 2020)
+
+#### 🚀 Enhancement
+
+- feat: fix select behavior ([@shrugs](https://github.com/shrugs))
+
+#### 🐛 Bug Fix
+
+- fix: explorer stories for new select ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.21.3 (Fri Aug 28 2020)
 
 #### 🐛 Bug Fix
