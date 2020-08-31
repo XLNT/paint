@@ -1,3 +1,15 @@
+# v0.24.1 (Mon Aug 31 2020)
+
+#### 🐛 Bug Fix
+
+- fix: revert to typescript 3.7 ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.24.0 (Mon Aug 31 2020)
 
 #### 🚀 Enhancement
