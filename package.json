@@ -120,6 +120,7 @@
         {
           "files": [
             "src/styles/",
+            "src/assets",
             "tailwind.config.js"
           ]
         }
