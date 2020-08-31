@@ -1,3 +1,15 @@
+# v0.25.1 (Mon Aug 31 2020)
+
+#### 🐛 Bug Fix
+
+- fix: responsive icons ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.25.0 (Mon Aug 31 2020)
 
 #### 🚀 Enhancement
