@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode, ReactElement, cloneElement } from 'react';
+import React, { PropsWithChildren, ReactNode } from 'react';
 import { WithClassName } from '../../utils/WithClassName';
 import { SimpleInlineButton } from '../InlineButton/InlineButton';
 import { cn } from '../../utils/cn';
@@ -16,9 +16,7 @@ interface SelectProps<TSelectItem> extends PropsWithChildren<{}>, WithClassName 
     label?: boolean;
   }) => ReactNode;
 
-  expandIcon: ReactElement;
-  collapseIcon: ReactElement;
-  cancelIcon: ReactElement;
+  renderIcon: (opts: { open: boolean; hasSelectedItem: boolean }) => ReactNode;
 }
 
 export function Select<TSelectItem>({
@@ -29,9 +27,7 @@ export function Select<TSelectItem>({
   renderItem,
   className,
   children,
-  expandIcon,
-  collapseIcon,
-  cancelIcon,
+  renderIcon,
 }: SelectProps<TSelectItem>) {
   const {
     isOpen,
@@ -52,17 +48,17 @@ export function Select<TSelectItem>({
         className={cn('flex-1')}
         {...getToggleButtonProps()}
         icon={
-          isOpen
-            ? collapseIcon
-            : selectedItem
-            ? // TODO: a11y clear button
-              cloneElement(cancelIcon, {
-                onClick: (e: any) => {
-                  e.stopPropagation();
-                  reset();
-                },
-              })
-            : expandIcon
+          <span
+            onClick={(e) => {
+              if (!!selectedItem) {
+                e.preventDefault();
+                e.stopPropagation();
+                reset();
+              }
+            }}
+          >
+            {renderIcon({ open: isOpen, hasSelectedItem: !!selectedItem })}
+          </span>
         }
       >
         {selectedItem ? (

@@ -121,9 +121,9 @@ export const EventExplorer = () => {
           onSelectItem={setMedium}
           renderItem={({ item }) => item.value}
           itemToKey={(item) => item.value}
-          expandIcon={<ExpandIcon />}
-          collapseIcon={<CollapseIcon />}
-          cancelIcon={<CancelIcon />}
+          renderIcon={({ open, hasSelectedItem }) =>
+            hasSelectedItem ? <CancelIcon /> : open ? <ExpandIcon /> : <CollapseIcon />
+          }
         >
           Medium
         </Select>
@@ -134,9 +134,9 @@ export const EventExplorer = () => {
           onSelectItem={setGeo}
           itemToKey={(item) => item.value}
           renderItem={({ item }) => item.value}
-          expandIcon={<ExpandIcon />}
-          collapseIcon={<CollapseIcon />}
-          cancelIcon={<CancelIcon />}
+          renderIcon={({ open, hasSelectedItem }) =>
+            hasSelectedItem ? <CancelIcon /> : open ? <ExpandIcon /> : <CollapseIcon />
+          }
         >
           Geography
         </Select>

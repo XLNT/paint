@@ -41,9 +41,9 @@ export const Simple = () => {
       renderItem={({ item, label }) => (
         <span className={cn('truncate', !label && item.parent && 'pl-2')}>{item.value}</span>
       )}
-      expandIcon={<ExpandIcon />}
-      collapseIcon={<CollapseIcon />}
-      cancelIcon={<CancelIcon />}
+      renderIcon={({ open, hasSelectedItem }) =>
+        hasSelectedItem ? <CancelIcon /> : open ? <ExpandIcon /> : <CollapseIcon />
+      }
     >
       Test Value
     </Select>
