@@ -35,7 +35,7 @@
     "react-merge-refs": "^1.0.0",
     "react-scripts": "3.4.3",
     "react-use": "^15.3.2",
-    "typescript": "3.9.7",
+    "typescript": "3.7.2",
     "webfontloader": "^1.6.28"
   },
   "browserslist": {
