@@ -5,7 +5,7 @@ import { Button } from './Button';
 import { H3 } from '../Text/Text';
 import { cn } from '../../utils/cn';
 
-import { ReactComponent as AnyIcon } from '../../icons/expand.svg';
+import { ReactComponent as AnyIcon } from '../../assets/icon/search.svg';
 
 export default {
   title: 'Button',

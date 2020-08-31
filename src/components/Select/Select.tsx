@@ -68,7 +68,7 @@ export function Select<TSelectItem>({
         {selectedItem ? (
           renderItem({ item: selectedItem, label: true })
         ) : (
-          <span className={cn('flex-1', 'truncate')}>{children}</span>
+          <span className={cn('truncate')}>{children}</span>
         )}
       </SimpleInlineButton>
       <ul

@@ -4,7 +4,7 @@ import { Notification } from './Notification';
 import { cn } from '../../utils/cn';
 import { H3, SubText, Text } from '../Text/Text';
 
-import { ReactComponent as CloseIcon } from '../../icons/close.svg';
+import { ReactComponent as CloseIcon } from '../../assets/icon/close.svg';
 import { Button } from '../Button/Button';
 import { action } from '@storybook/addon-actions';
 

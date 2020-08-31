@@ -2,7 +2,7 @@ import React from 'react';
 import { InlineButton } from './InlineButton';
 import { cn } from '../../utils/cn';
 
-import { ReactComponent as AnyIcon } from '../../icons/expand.svg';
+import { ReactComponent as AnyIcon } from '../../assets/icon/search.svg';
 import { InlineButtonGroup } from './InlineButtonGroup';
 
 export default {

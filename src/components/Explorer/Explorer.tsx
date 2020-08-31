@@ -1,10 +1,10 @@
 import React, { PropsWithChildren, ReactNode, useReducer, ReactElement, cloneElement } from 'react';
+import { mergeProps } from '@react-aria/utils';
+import { useCombobox } from 'downshift';
 import { cn } from '../../utils/cn';
 import { WithClassName } from '../../utils/WithClassName';
 import { InlineButton } from '../InlineButton/InlineButton';
 import { Text } from '../Text/Text';
-import { mergeProps } from '@react-aria/utils';
-import { useCombobox } from 'downshift';
 
 interface ExplorerProps<TItem> extends WithClassName, PropsWithChildren<{}> {
   search?: string;

@@ -6,15 +6,15 @@ import { InlineButton } from '../InlineButton/InlineButton';
 import { Skeleton } from '../Skeleton/Skeleton';
 import { Text } from '../Text/Text';
 import { Button } from '../Button/Button';
-import { ReactComponent as BackIcon } from '../../icons/nav left.svg';
 import { Select } from '../Select/Select';
-import { ReactComponent as SearchIcon } from '../../icons/search.svg';
-import { ReactComponent as MenuIcon } from '../../icons/menu.svg';
-import { ReactComponent as CloseIcon } from '../../icons/close.svg';
 
-import { ReactComponent as ExpandIcon } from '../../icons/nav down.svg';
-import { ReactComponent as CollapseIcon } from '../../icons/nav up.svg';
-import { ReactComponent as CancelIcon } from '../../icons/close.svg';
+import { ReactComponent as BackIcon } from '../../assets/icon/back.svg';
+import { ReactComponent as SearchIcon } from '../../assets/icon/search.svg';
+import { ReactComponent as MenuIcon } from '../../assets/icon/menu.svg';
+import { ReactComponent as CloseIcon } from '../../assets/icon/close.svg';
+import { ReactComponent as ExpandIcon } from '../../assets/icon/down arrow.svg';
+import { ReactComponent as CollapseIcon } from '../../assets/icon/down arrow.svg';
+import { ReactComponent as CancelIcon } from '../../assets/icon/close.svg';
 
 export default {
   title: 'Explorer',

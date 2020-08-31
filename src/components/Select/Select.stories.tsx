@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Select } from './Select';
-import { ReactComponent as ExpandIcon } from '../../icons/nav down.svg';
-import { ReactComponent as CollapseIcon } from '../../icons/nav up.svg';
-import { ReactComponent as CancelIcon } from '../../icons/close.svg';
 import { cn } from '../../utils/cn';
+import { ReactComponent as ExpandIcon } from '../../assets/icon/down arrow.svg';
+import { ReactComponent as CollapseIcon } from '../../assets/icon/down arrow.svg';
+import { ReactComponent as CancelIcon } from '../../assets/icon/close.svg';
 
 export default {
   title: 'Select',
@@ -33,13 +33,13 @@ export const Simple = () => {
 
   return (
     <Select
-      className={cn('w-24')}
+      className={cn('w-48')}
       items={ITEMS}
       selectedItem={value}
       onSelectItem={setValue}
       itemToKey={(item) => item.value}
-      renderItem={({ item }) => (
-        <span className={cn('truncate', item.parent && 'pl-2')}>{item.value}</span>
+      renderItem={({ item, label }) => (
+        <span className={cn('truncate', !label && item.parent && 'pl-2')}>{item.value}</span>
       )}
       expandIcon={<ExpandIcon />}
       collapseIcon={<CollapseIcon />}
