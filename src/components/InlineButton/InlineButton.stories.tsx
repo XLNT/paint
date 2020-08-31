@@ -11,6 +11,12 @@ export default {
 
 export const JustIcon = () => <InlineButton icon={<AnyIcon />} />;
 
+export const ExtraSpace = () => (
+  <InlineButton className={cn('w-48')} icon={<AnyIcon />}>
+    Save
+  </InlineButton>
+);
+
 export const ButtonGroup = () => (
   <InlineButtonGroup className={cn('w-64')}>
     <InlineButton className={cn('flex-1')} icon={<AnyIcon />}>

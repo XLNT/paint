@@ -44,7 +44,7 @@ const primaryButtonStyles = ({
     textStyles,
     childStyles,
     icon && 'h-8 w-8',
-    icon ? 'p-1' : 'py-1 px-4 space-x-2',
+    icon ? 'p-1' : 'px-2 space-x-2',
     'text-base',
     disabled ? 'text-concrete' : danger ? 'text-gesso' : 'text-bruise',
     'rounded border',
