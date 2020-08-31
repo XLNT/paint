@@ -1,3 +1,15 @@
+# v0.24.0 (Mon Aug 31 2020)
+
+#### 🚀 Enhancement
+
+- feat: update to typescript 4 ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.23.3 (Mon Aug 31 2020)
 
 #### 🐛 Bug Fix
