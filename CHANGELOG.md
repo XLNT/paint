@@ -1,3 +1,15 @@
+# v0.23.3 (Mon Aug 31 2020)
+
+#### 🐛 Bug Fix
+
+- fix: stop exporting assets ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.23.2 (Mon Aug 31 2020)
 
 #### 🐛 Bug Fix
