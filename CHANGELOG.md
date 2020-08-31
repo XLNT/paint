@@ -1,3 +1,15 @@
+# v0.23.2 (Mon Aug 31 2020)
+
+#### 🐛 Bug Fix
+
+- fix: revert back to typescript@3 ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.23.1 (Mon Aug 31 2020)
 
 #### 🐛 Bug Fix
