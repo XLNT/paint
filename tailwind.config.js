@@ -57,6 +57,9 @@ module.exports = {
       inset: {
         full: '100%',
       },
+      height: {
+        '1/2': '50%',
+      },
     },
   },
   variants: {
