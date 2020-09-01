@@ -1,3 +1,15 @@
+# v0.28.0 (Tue Sep 01 2020)
+
+#### 🚀 Enhancement
+
+- feat: add subscribe icon ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.27.0 (Tue Sep 01 2020)
 
 #### 🚀 Enhancement
