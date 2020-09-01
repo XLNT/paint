@@ -49,13 +49,7 @@ const primaryButtonStyles = ({
     disabled ? 'text-concrete' : danger ? 'text-gesso' : 'text-bruise',
     'rounded border',
     disabled ? 'border-concrete' : danger ? 'border-gesso' : 'border-smudge',
-    disabled
-      ? 'bg-transparent'
-      : danger
-      ? 'bg-tomato'
-      : hovered || pressed
-      ? 'bg-gesso'
-      : 'bg-transparent',
+    disabled ? 'bg-drywall' : danger ? 'bg-tomato' : hovered || pressed ? 'bg-gesso' : 'bg-gesso',
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',
     !disabled && !pressed && (hovered || focused) && 'shadow-elevated',
   );
@@ -91,7 +85,9 @@ const secondaryButtonStyles = ({
       : 'border-transparent',
     danger && !disabled
       ? 'bg-tomato' //
-      : (hovered || pressed || focused) && !disabled && 'bg-gesso',
+      : (hovered || pressed || focused) && !disabled
+      ? 'bg-gesso'
+      : 'bg-gesso',
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',
     !disabled && !pressed && (hovered || focused) && 'shadow-elevated',
   );
