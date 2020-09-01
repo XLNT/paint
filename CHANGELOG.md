@@ -1,3 +1,19 @@
+# v0.30.0 (Tue Sep 01 2020)
+
+#### 🚀 Enhancement
+
+- feat: add mono font ([@shrugs](https://github.com/shrugs))
+
+#### ⚠️ Pushed to `master`
+
+- Merge branch 'main' of github.com:XLNT/paint into main ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.29.0 (Tue Sep 01 2020)
 
 #### 🚀 Enhancement
