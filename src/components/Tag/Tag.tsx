@@ -29,10 +29,11 @@ const tagStyles = ({
 }: TagState) =>
   cn(
     'transition-all duration-150',
-    'px-2 py-1 space-x-1',
+    'px-2 space-x-1',
     'focus:outline-none whitespace-no-wrap',
     disabled ? 'bg-transparent' : 'bg-gesso',
     'rounded border',
+    'font-mono',
     disabled && 'text-concrete',
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',
     disabled

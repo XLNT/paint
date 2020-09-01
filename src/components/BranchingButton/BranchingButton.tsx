@@ -18,7 +18,7 @@ export function BranchingButton({
         <>
           {children}
           <Button onPress={toggle} tertiary>
-            Cancel
+            cancel
           </Button>
         </>
       ) : (

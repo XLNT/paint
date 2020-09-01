@@ -28,7 +28,7 @@ interface ButtonState {
 const transitionStyles = cn('transition-all duration-150');
 const childStyles = cn('flex flex-row justify-center items-center min-w-0');
 const focusStyles = cn('focus:outline-none');
-const textStyles = cn('whitespace-no-wrap select-none font-sans tracking-button');
+const textStyles = cn('whitespace-no-wrap select-none font-mono tracking-button');
 
 const primaryButtonStyles = ({
   disabled = false,
@@ -45,7 +45,6 @@ const primaryButtonStyles = ({
     childStyles,
     icon && 'h-8 w-8',
     icon ? 'p-1' : 'px-2 space-x-2',
-    'text-base',
     disabled ? 'text-concrete' : danger ? 'text-gesso' : 'text-bruise',
     'rounded border',
     disabled ? 'border-concrete' : danger ? 'border-gesso' : 'border-smudge',
@@ -69,7 +68,6 @@ const secondaryButtonStyles = ({
     childStyles,
     icon && 'h-6 w-6',
     !icon && 'px-2 space-x-2',
-    'font-bold',
     disabled ? 'text-concrete' : danger ? 'text-gesso' : 'text-bruise',
     'rounded border',
     icon

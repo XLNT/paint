@@ -7,7 +7,7 @@ export function usePaintFonts() {
         classes: false,
         events: false,
         google: {
-          families: ['DM Sans'],
+          families: ['DM Sans', 'DM Mono'],
         },
         typekit: {
           id: 'nah1hrx',

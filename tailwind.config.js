@@ -7,7 +7,7 @@ module.exports = {
     fontFamily: {
       sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
       serif: ['turnip', ...defaultTheme.fontFamily.sans],
-      mono: defaultTheme.fontFamily.mono,
+      mono: ['"DM Mono"', ...defaultTheme.fontFamily.mono],
     },
     gradients: (theme) => ({
       empty: ['180deg', theme('colors.smudge'), theme('colors.transparent')],
