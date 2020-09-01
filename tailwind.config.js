@@ -18,6 +18,7 @@ module.exports = {
         gesso: '#FFFFFF',
         drywall: '#F8F8F8',
         smudge: '#E8E9F1',
+        glass: 'rgba(250, 250, 250, 0.8)',
         concrete: '#9C9CA5',
         bruise: '#010024',
         tomato: '#FF3333',
