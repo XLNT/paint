@@ -1,3 +1,15 @@
+# v0.31.0 (Wed Sep 02 2020)
+
+#### 🚀 Enhancement
+
+- feat: branch button allows any cancel element ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.30.0 (Tue Sep 01 2020)
 
 #### 🚀 Enhancement
