@@ -26,7 +26,7 @@ interface ButtonState {
 }
 
 const transitionStyles = cn('transition-all duration-150');
-const childStyles = cn('flex flex-row justify-center items-center min-w-0');
+const childStyles = cn('flex flex-row items-center min-w-0');
 const focusStyles = cn('focus:outline-none');
 const textStyles = cn('whitespace-no-wrap select-none font-mono tracking-button');
 
