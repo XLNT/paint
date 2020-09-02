@@ -12,7 +12,10 @@ export default {
 export const AddToCalendar = () => (
   <div className={cn('space-y-4')}>
     <H3>Add to Calendar</H3>
-    <BranchingButton action={<Button secondary>+ Add to calendar</Button>}>
+    <BranchingButton
+      action={<Button secondary>+ Add to calendar</Button>}
+      cancel={<Button secondary>Cancel</Button>}
+    >
       <Button onPress={action('onPressA')} secondary autoFocus>
         Option a
       </Button>

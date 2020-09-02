@@ -1,13 +1,14 @@
 import React, { cloneElement, ReactNode, ReactElement } from 'react';
 import useToggle from 'react-use/lib/useToggle';
 import { cn } from '../../utils/cn';
-import { Button } from '../Button/Button';
 
 export function BranchingButton({
   action,
+  cancel,
   children,
 }: {
   action: ReactElement;
+  cancel: ReactElement;
   children: ReactNode;
 }) {
   const [open, toggle] = useToggle(false);
@@ -17,9 +18,7 @@ export function BranchingButton({
       {open ? (
         <>
           {children}
-          <Button onPress={toggle} tertiary>
-            cancel
-          </Button>
+          {cloneElement(cancel, { onPress: toggle })}
         </>
       ) : (
         cloneElement(action, { onPress: toggle })
