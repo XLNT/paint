@@ -27,7 +27,6 @@
     "@react-aria/interactions": "^3.2.0",
     "@react-aria/utils": "^3.2.0",
     "classnames": "^2.2.6",
-    "downshift": "^6.0.5",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.13",
     "react": "^16.13.1",
