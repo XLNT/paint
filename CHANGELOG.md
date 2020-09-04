@@ -1,3 +1,15 @@
+# v0.31.2 (Fri Sep 04 2020)
+
+#### 🐛 Bug Fix
+
+- fix: refactor explorer into intelligent container component ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.31.1 (Wed Sep 02 2020)
 
 #### 🐛 Bug Fix
