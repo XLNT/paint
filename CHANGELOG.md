@@ -1,3 +1,15 @@
+# v0.33.0 (Sat Sep 05 2020)
+
+#### 🚀 Enhancement
+
+- feat: new icons ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.32.0 (Sat Sep 05 2020)
 
 #### 🚀 Enhancement
