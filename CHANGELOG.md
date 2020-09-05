@@ -1,3 +1,15 @@
+# v0.31.3 (Sat Sep 05 2020)
+
+#### 🐛 Bug Fix
+
+- fix: allow single button in children ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.31.2 (Fri Sep 04 2020)
 
 #### 🐛 Bug Fix
