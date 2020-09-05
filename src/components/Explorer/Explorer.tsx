@@ -11,7 +11,7 @@ interface ExplorerProps extends WithClassName {
   topPopunder?: ReactElement;
   bottom?: ReactElement;
   bottomPopunder?: ReactElement;
-  children?: ReactElement[];
+  children?: ReactElement | ReactElement[];
 }
 
 export enum BorderState {

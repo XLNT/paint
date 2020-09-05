@@ -21,6 +21,17 @@ export const Simple = () => (
   />
 );
 
+export const SimpleSingle = () => (
+  <Explorer
+    className={cn('w-64')}
+    start={<InlineButton className={buttonBorderForState(BorderState.None)} icon={<BackIcon />} />}
+    middle={<Text className={buttonBorderForState(BorderState.None)}>Hello There</Text>}
+    end={<InlineButton className={buttonBorderForState(BorderState.None)} icon={<MenuIcon />} />}
+  >
+    <InlineButton className={buttonBorderForState(BorderState.None)}>Medium</InlineButton>
+  </Explorer>
+);
+
 export const Popovered = () => (
   <div className={cn('flex flex-row space-x-4')}>
     <Explorer
