@@ -60,6 +60,9 @@ module.exports = {
       height: {
         '1/2': '50%',
       },
+      maxHeight: {
+        popunder: 'calc(100vh - 10rem)',
+      },
     },
   },
   variants: {

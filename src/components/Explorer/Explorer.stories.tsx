@@ -83,7 +83,7 @@ export const Popovered = () => (
       end={
         <InlineButton className={buttonBorderForState(BorderState.Selected)} icon={<MenuIcon />} />
       }
-      topPopunder={<div className={cn('h-24')} />}
+      topPopunder={<div className={cn('h-screen')} />}
     />
   </div>
 );
