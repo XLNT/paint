@@ -11,7 +11,7 @@ interface ExplorerProps extends WithClassName {
   topPopunder?: ReactElement;
   bottom?: ReactElement;
   bottomPopunder?: ReactElement;
-  children?: ReactElement | ReactElement[];
+  children?: any;
 }
 
 export enum BorderState {
@@ -81,14 +81,18 @@ export function Explorer({
             ),
           }),
           [
-            React.Children.map(children, (child: ReactElement, i) =>
-              cloneElement(
-                child as ReactElement,
-                mergeProps(child.props, {
-                  className: cn('flex-1', i > 0 && 'border-l border-l-smudge'),
-                }),
+            children &&
+              React.Children.map(
+                children,
+                (child: ReactElement, i) =>
+                  child &&
+                  cloneElement(
+                    child as ReactElement,
+                    mergeProps(child.props, {
+                      className: cn('flex-1', i > 0 && 'border-l border-l-smudge'),
+                    }),
+                  ),
               ),
-            ),
             bottomPopunder &&
               cloneElement(
                 bottomPopunder,
