@@ -1,3 +1,15 @@
+# v0.32.0 (Sat Sep 05 2020)
+
+#### 🚀 Enhancement
+
+- feat: popunder max height ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.31.4 (Sat Sep 05 2020)
 
 #### 🐛 Bug Fix
