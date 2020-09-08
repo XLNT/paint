@@ -1,3 +1,15 @@
+# v0.36.0 (Tue Sep 08 2020)
+
+#### 🚀 Enhancement
+
+- feat: add ars logo ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.35.2 (Tue Sep 08 2020)
 
 #### 🐛 Bug Fix
