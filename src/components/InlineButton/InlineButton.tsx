@@ -26,7 +26,7 @@ const childStyles = cn(
   'flex-shrink-0',
   'flex flex-row justify-between items-center min-w-0 space-x-1',
 );
-const focusStyles = cn('focus:outline-none');
+const focusStyles = cn('focus:outline-none focus:shadow-none');
 const textStyles = cn('whitespace-no-wrap select-none font-sans tracking-button truncate');
 
 const inlineButtonStyles = ({
@@ -40,9 +40,11 @@ const inlineButtonStyles = ({
     textStyles,
     childStyles,
     'p-2',
+    'border border-transparent',
     disabled ? 'text-concrete' : undefined,
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',
-    hovered || pressed || focused ? 'bg-drywall' : 'bg-gesso',
+    (hovered || focused) && !disabled && 'border-bruise',
+    pressed ? 'bg-drywall' : 'bg-gesso',
   );
 
 export const SimpleInlineButton = forwardRef<HTMLElement, InlineButtonProps>(
