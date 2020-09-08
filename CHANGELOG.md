@@ -1,3 +1,15 @@
+# v0.35.2 (Tue Sep 08 2020)
+
+#### 🐛 Bug Fix
+
+- fix: specificity override on borders for inline button ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.35.1 (Tue Sep 08 2020)
 
 #### 🐛 Bug Fix
