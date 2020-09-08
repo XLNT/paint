@@ -1,3 +1,19 @@
+# v0.35.1 (Tue Sep 08 2020)
+
+#### 🐛 Bug Fix
+
+- fix: add hover state to inline button ([@shrugs](https://github.com/shrugs))
+
+#### ⚠️ Pushed to `master`
+
+- Merge branch 'main' of github.com:XLNT/paint into main ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.35.0 (Tue Sep 08 2020)
 
 #### 🚀 Enhancement
