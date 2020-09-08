@@ -1,3 +1,15 @@
+# v0.33.1 (Tue Sep 08 2020)
+
+#### 🐛 Bug Fix
+
+- fix: top popunder is always on top ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.33.0 (Sat Sep 05 2020)
 
 #### 🚀 Enhancement
