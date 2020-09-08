@@ -1,3 +1,15 @@
+# v0.35.0 (Tue Sep 08 2020)
+
+#### 🚀 Enhancement
+
+- feat: add filter icon ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.34.0 (Tue Sep 08 2020)
 
 #### 🚀 Enhancement
