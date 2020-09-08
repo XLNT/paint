@@ -26,7 +26,7 @@ const childStyles = cn(
   'flex-shrink-0',
   'flex flex-row justify-between items-center min-w-0 space-x-1',
 );
-const focusStyles = cn('focus:outline-none focus:shadow-none');
+const focusStyles = cn('focus:outline-none');
 const textStyles = cn('whitespace-no-wrap select-none font-sans tracking-button truncate');
 
 const inlineButtonStyles = ({
@@ -43,7 +43,7 @@ const inlineButtonStyles = ({
     'border border-transparent',
     disabled ? 'text-concrete' : undefined,
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',
-    (hovered || focused) && !disabled && 'border-bruise',
+    hovered && !disabled && 'border-l-bruise border-t-bruise border-r-bruise border-b-bruise',
     pressed ? 'bg-drywall' : 'bg-gesso',
   );
 
