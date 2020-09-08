@@ -27,7 +27,7 @@ export const buttonBorderForState = (state: BorderState) =>
   });
 
 const popunderStyle = cn(
-  'absolute top-full left-0 right-0 max-h-popunder z-10',
+  'absolute top-full left-0 right-0 max-h-popunder',
   'bg-gesso',
   'border-l border-r border-b border-bruise',
   'overflow-y-scroll touch-action-pan-y overscroll-contain',
@@ -66,7 +66,7 @@ export function Explorer({
               topPopunder,
               mergeProps(topPopunder.props, {
                 key: 'popunder',
-                className: popunderStyle,
+                className: cn(popunderStyle, 'z-20'),
               }),
             ),
         ],
@@ -99,7 +99,7 @@ export function Explorer({
                 bottomPopunder,
                 mergeProps(bottomPopunder.props, {
                   key: 'popunder',
-                  className: popunderStyle,
+                  className: cn(popunderStyle, 'z-10'),
                 }),
               ),
           ],
