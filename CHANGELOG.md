@@ -1,3 +1,15 @@
+# v0.36.3 (Wed Sep 09 2020)
+
+#### 🐛 Bug Fix
+
+- fix: switch back to better padding ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.36.2 (Wed Sep 09 2020)
 
 #### 🐛 Bug Fix
