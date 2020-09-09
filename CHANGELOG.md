@@ -1,3 +1,16 @@
+# v0.36.1 (Wed Sep 09 2020)
+
+#### 🐛 Bug Fix
+
+- fix: explorer heights ([@shrugs](https://github.com/shrugs))
+- fix: force transparent bottom border ([@shrugs](https://github.com/shrugs))
+
+#### Authors: 1
+
+- Matt Condon ([@shrugs](https://github.com/shrugs))
+
+---
+
 # v0.36.0 (Tue Sep 08 2020)
 
 #### 🚀 Enhancement
