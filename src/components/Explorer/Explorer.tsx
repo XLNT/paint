@@ -59,7 +59,7 @@ export function Explorer({
           ),
           cloneElement(
             middle,
-            mergeProps(middle.props, { key: 'middle', className: cn('flex-1', 'p-2') }),
+            mergeProps(middle.props, { key: 'middle', className: cn('flex-1', 'p-1') }),
           ),
           cloneElement(end, mergeProps(end.props, { key: 'end', className: cn('flex-none') })),
           topPopunder &&
