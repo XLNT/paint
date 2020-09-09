@@ -39,7 +39,7 @@ const inlineButtonStyles = ({
     focusStyles,
     textStyles,
     childStyles,
-    'py-1 px-2',
+    'p-2',
     'border border-transparent',
     disabled ? 'text-concrete' : undefined,
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',

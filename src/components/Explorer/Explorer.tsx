@@ -54,13 +54,13 @@ export function Explorer({
         [
           cloneElement(
             start,
-            mergeProps(start.props, { key: 'start', className: cn('flex-none') }),
+            mergeProps(start.props, { key: 'start', className: cn('flex-none p-3') }),
           ),
           cloneElement(
             middle,
-            mergeProps(middle.props, { key: 'middle', className: cn('flex-1', 'p-1') }),
+            mergeProps(middle.props, { key: 'middle', className: cn('flex-1', 'p-2') }),
           ),
-          cloneElement(end, mergeProps(end.props, { key: 'end', className: cn('flex-none') })),
+          cloneElement(end, mergeProps(end.props, { key: 'end', className: cn('flex-none p-3') })),
           topPopunder &&
             cloneElement(
               topPopunder,
