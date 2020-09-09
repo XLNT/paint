@@ -22,8 +22,7 @@ export enum BorderState {
 
 export const buttonBorderForState = (state: BorderState) =>
   cn('border border-transparent', {
-    'border-l-bruise border-t-bruise border-r-bruise border-b-transparent':
-      state === BorderState.Selected,
+    'border-l-bruise border-t-bruise border-r-bruise': state === BorderState.Selected,
     'border-b-bruise': state === BorderState.Unselected,
   });
 
